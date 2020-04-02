@@ -38,11 +38,6 @@
       
 <section class="cover">
     
-      
-      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
   <div class="cover-frame">
     <div class="bg-box">
       <img src="/images/cover1.jpg" alt="image frame" />
@@ -111,10 +106,9 @@
       
 
       
-      <p>@<a href="目录">TOC</a></p>
+      <p>day17：高阶函数：map、reduce、sorted、fliter、lambda</p>
 <h2 id="一、map"><a href="#一、map" class="headerlink" title="一、map"></a>一、map</h2><p>map(fn,lsd)<br>fn: 可以是自己写的，也可以是系统自带的<br>lsd:  一个序列<br>功能：把lsd中每一个元素分别作用在fn上</p>
 <p>例如：字符串列表变为int列表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">map(fn,lsd)</span></span><br><span class="line"><span class="string">fn: 可以是自己写的，也可以是系统自带的</span></span><br><span class="line"><span class="string">lsd:  一个序列</span></span><br><span class="line"><span class="string">功能：把lsd中每一个元素分别作用在fn上</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment">#比如变为int列表</span></span><br><span class="line">L = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>]</span><br><span class="line">L1 = []</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> L:</span><br><span class="line">    L1.append(int(var))</span><br><span class="line">print(L1)</span><br><span class="line"></span><br><span class="line">res = list(map(int,L)) <span class="comment">#分配进行处理，即把L都用int转换成int型</span></span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(key)</span>:</span></span><br><span class="line">    dict1 = &#123;<span class="string">"1"</span>:<span class="number">1</span>,<span class="string">"2"</span>:<span class="number">2</span>,<span class="string">"3"</span>:<span class="number">3</span>,<span class="string">"4"</span>:<span class="number">4</span>,<span class="string">"5"</span>:<span class="number">5</span>,<span class="string">"6"</span>:<span class="number">6</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> dict1[key]</span><br><span class="line">res = list(map(convert,L))</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
       
       <a class="article-more-link" href="/2020/04/02/my-first-blog/">阅读更多...</a>
       
