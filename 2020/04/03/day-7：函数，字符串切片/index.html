@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    从高考到程序员 |  JJ1M8
+    day 7：函数，字符串切片 |  JJ1M8
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="w-从高考到程序员" class="article article-type-w" itemscope
+  <article id="w-day-7：函数，字符串切片" class="article article-type-w" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  从高考到程序员
+  day 7：函数，字符串切片
 </h1>
  
 
@@ -53,8 +53,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/03/%E4%BB%8E%E9%AB%98%E8%80%83%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%91%98/" class="article-date">
-  <time datetime="2020-04-02T16:07:05.000Z" itemprop="datePublished">2020-04-03</time>
+      <a href="/2020/04/03/day-7%EF%BC%9A%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87/" class="article-date">
+  <time datetime="2020-04-02T16:28:24.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
       
       
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">906字</span>
+            <span class="post-count">552字</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
+            <span class="post-count">2分钟</span>
         </span>
     </span>
 </div>
@@ -96,19 +96,19 @@
       
 
       
-      <p>##1、前言<br>首先，本人是一名物联网工程专业大一的学生。可以说我是去年刚刚才走出高中、迈进大学的校门的，我知道我还不能算是一名程序员！我知道我还不能算是一名程序员！我知道我还不能算是一名程序员！但我有着一颗成为程序员的心，我相信，有一天我可以做到。</p>
-<p>主要想写给自己，记录自己这一小段路的足迹。同时，也为一些将要进入大学的、志同道合的同学献上我的经验。</p>
-<p>本人经历的虽然不多，但是在这有限的时间里，感触还是挺多的。</p>
+      <p>##一、不定长参数</p>
+<p>全局变量：顶格写的变量，在任何地方都可以使用 局部变量：</p>
+<p>在代码组中定义，只能在代码组中使用</p>
 <a id="more"></a>
-<p>##2、我的高中<br>初中那一会，完全不把学习放在心上，每天只知道玩手机，看小说，打游戏。最后也不知道怎么就稀里糊涂的过去了，上了我们那排名最末尾的一所重点高中。到了高中，高一的时候还是没能静下心来学习，到了高二分重点班也没有机会能进，可以说是白白失去了很多机会。我想说：关键的时候一定要咬牙！真的，长点志气，别整天嬉皮笑脸的，如果自己都不想让自己变的更好的话，那谁也帮不了你，机会要自己去把握。</p>
-<p>到了高二，我还在普通班里，要说不学习到不至于，只是没有去拼。等到我终于意识到学习是一件需要我使出浑身解数的时候，我在不知不觉中已经落后了别人太多了。在高二下到高考结束，我付出了不知多少的辛苦，我知道，比我努力的大有人在，我只求做到问心无愧。在我疯狂的学习之下，我终于赶上了班里的大部分人，最后最令我妈妈惊喜的是我也能考上一本。</p>
-<p>现在回首我的高中，仿佛就是刚刚才过去，但也让人怀念。虽然高中浪费了很多的时间，但高中也留给了我无比珍贵的东西——敢于奋斗，敢于付出，敢于牺牲的精神。每个人都不是生来的天才，只有足够的努力才能让自己成为强者。千万别现在还年轻，此时不搏何时搏。卯足了劲，打他一个！</p>
-<p>建议：</p>
-<p>在大学之前培养自己的兴趣爱好。–高一高二不忙，就多看看书，想办法开拓自己的视野，给自己找好目标，定好位就赢在了起跑线上了，聪明的人早早就规划好了自己。<br>敢于尝试，敢于付出自己的时间。–哪怕是走错了路，选错了目标，花掉的时间也绝不是浪费。<br>不要拘泥于自己的小世界。———用好网络，书籍等自己身边一切资源，你会发现世界远比你想象的丰富。<br>高三要沉住气，做得住。<br>一定要好好学英语!一定要好好学英语！一定要好好学英语！多看书！多看书！多看书！</p>
-<p>##3、开始的迷茫<br>刚开始进入大学，什么东西都是焕然一新的，（到了大学机会更要自己去把握。）无论如何，只要自己想，就去做,不要过多的在意他人的看法，大学里靠自己拼搏。</p>
-<p>多多自学，用好互联网，靠自学！</p>
-<p>暂时，想说的就这么多，希望可以对他人有所帮助！</p>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#函数定义</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">opration</span><span class="params">(a,b,c,d)</span>:</span></span><br><span class="line">    sum1 = a + b + c + d</span><br><span class="line">    print(sum1)</span><br><span class="line">opration(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用容器作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">opration</span><span class="params">(*args)</span>:</span></span><br><span class="line">    sum1 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> args:</span><br><span class="line">        sum1+=var</span><br><span class="line">    <span class="keyword">return</span> sum1</span><br><span class="line">res = opration(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># * 垃圾回收站，他不能接收关键字参数,不能接收关键字参数</span></span><br><span class="line"><span class="comment">#带* 的参数要放在形参的最后面</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">opration</span><span class="params">(a,b,c,*d)</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">    print(b)</span><br><span class="line">    print(c)</span><br><span class="line">    print(d)</span><br><span class="line">opration(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># **接收不定长关键字参数,只能放在最后</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">opration</span><span class="params">(a,b,c,d,*args,**kwargs)</span>:</span></span><br><span class="line">    print(a,b,c,d)</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">opration(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,A = <span class="number">9</span>,B = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>##二、函数闭包</p>
+<p>函数闭包：内部函数调用外部函数的变量（非全局变量， 则称内部函数为闭包 即调用一个函数，返回一个新的函数来，称为闭包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    num = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">()</span>:</span></span><br><span class="line">        num=<span class="number">2</span></span><br><span class="line">        print(num)</span><br><span class="line">    print(num)</span><br><span class="line">    func1()</span><br><span class="line">    print(num)</span><br><span class="line">func() <span class="comment">#1,2,1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#先return inner这个函数，之后res代表inner，而num1传入了20</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(num1)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(num2)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> num1 + num2</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">res = outer(<span class="number">20</span>)</span><br><span class="line">result = res(<span class="number">10</span>)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在使用闭包的时候，在内部没有引用的外部变量才可以</span></span><br><span class="line"><span class="comment">#而内部有使用时，代码会运行内部的变量，而导致没定义的报错</span></span><br><span class="line"><span class="comment"># def outer(a):</span></span><br><span class="line"><span class="comment">#     def inner():</span></span><br><span class="line"><span class="comment">#         a = a+1</span></span><br><span class="line"><span class="comment">#         return a</span></span><br><span class="line"><span class="comment">#     return inner</span></span><br><span class="line"><span class="comment"># res = outer(1)</span></span><br><span class="line"><span class="comment"># result = res()</span></span><br><span class="line"><span class="comment"># print(result)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        a[<span class="number">0</span>] = a[<span class="number">0</span>]+<span class="number">1</span>   <span class="comment">#使用容器后，并没有定义a，而是对a的一个取值</span></span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">res = outer([<span class="number">1</span>])</span><br><span class="line">result = res()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>##三、字符串和列表的切片</p>
+<p>[开始索引:结束索引:间隔] 切片操作(结束索引取不到)</p>
+<p>不加结束索引代表从开始索引取到最后</p>
+<p>间隔缺省则是1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"停车坐爱枫林晚，霜叶红于二月花"</span></span><br><span class="line">print(str1[<span class="number">-3</span>],str1[<span class="number">-2</span>],str1[<span class="number">-1</span>])</span><br><span class="line">print(str1[<span class="number">-3</span>:])</span><br><span class="line">print(str1[::<span class="number">2</span>])</span><br><span class="line">print(str1[<span class="number">4</span>:<span class="number">0</span>:<span class="number">-1</span>])</span><br><span class="line">print(str1[::<span class="number">-1</span> ])</span><br><span class="line"></span><br><span class="line">var = range(<span class="number">100</span>)</span><br><span class="line">print(var[<span class="number">25</span>:<span class="number">31</span>])</span><br><span class="line">print(var[<span class="number">70</span>:<span class="number">83</span>:<span class="number">3</span>])</span><br><span class="line">print(var[<span class="number">90</span>:<span class="number">84</span>:<span class="number">-1</span>])</span><br><span class="line">print(var[<span class="number">99</span>:<span class="number">69</span>:<span class="number">-5</span>])</span><br><span class="line">print(var[<span class="number">-10</span>:<span class="number">-30</span>:<span class="number">-2</span>])</span><br><span class="line"></span><br><span class="line">print(var[<span class="number">90</span>:<span class="number">200</span>]) <span class="comment">#a取到90到99</span></span><br><span class="line">print(var[<span class="number">150</span>:<span class="number">200</span>])<span class="comment">#取出来为空。</span></span><br></pre></td></tr></table></figure>
       
       <!-- reward -->
       
@@ -173,14 +173,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/%E4%BB%8E%E9%AB%98%E8%80%83%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%91%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day-7%EF%BC%9A%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E4%B9%8B%E5%A4%96/" rel="tag">编码之外</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
 
 
     </footer>
@@ -191,19 +191,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/03/day1%EF%BC%9Apython%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F%E3%80%81%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB%E3%80%81%E5%8F%98%E9%87%8F%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+      <a href="/2020/04/03/day-8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            day1：python的常用命名方式、语句分类、变量使用
+            day 8:字符串相关方法
           
         </div>
       </a>
     
     
-      <a href="/2020/04/02/my-first-blog/" class="article-nav-link">
+      <a href="/2020/04/03/day-6%EF%BC%9A%E5%BE%AA%E7%8E%AF/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">my-first-blog</div>
+        <div class="article-nav-title">day 6：循环</div>
       </a>
     
   </nav>

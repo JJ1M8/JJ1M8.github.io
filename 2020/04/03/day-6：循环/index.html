@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    day2：基本数据类型列表、集合、元组、字典 |  JJ1M8
+    day 6：循环 |  JJ1M8
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="w-day2：基本数据类型列表、集合、元组、字典" class="article article-type-w" itemscope
+  <article id="w-day-6：循环" class="article article-type-w" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  day2：基本数据类型列表、集合、元组、字典
+  day 6：循环
 </h1>
  
 
@@ -53,8 +53,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/03/day2%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%97%E8%A1%A8%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8/" class="article-date">
-  <time datetime="2020-04-02T16:13:47.000Z" itemprop="datePublished">2020-04-03</time>
+      <a href="/2020/04/03/day-6%EF%BC%9A%E5%BE%AA%E7%8E%AF/" class="article-date">
+  <time datetime="2020-04-02T16:25:41.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
       
       
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">439字</span>
+            <span class="post-count">498字</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
+            <span class="post-count">2分钟</span>
         </span>
     </span>
 </div>
@@ -96,13 +96,28 @@
       
 
       
-      <p>##一、列表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表， 使用标识符[]，每一个元素使用逗号区分，可以随时修改</span></span><br><span class="line"><span class="comment">#列表可以嵌套列表</span></span><br><span class="line"><span class="comment">#对应于数组使用，功能比数组强大</span></span><br><span class="line">list1 = <span class="string">'[1,2,3,"a","b",(1,2),[1,2,3]]'</span></span><br><span class="line">print(list1,type(list1))</span><br><span class="line"></span><br><span class="line"><span class="comment">#索引 0 1 2 3 4 5  （正向）index</span></span><br><span class="line"><span class="comment">#    -5 -4 -3 -2 -1（反向）</span></span><br><span class="line"></span><br><span class="line">list2 = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>]</span><br><span class="line">ver = list2[<span class="number">1</span>]</span><br><span class="line">print(ver,type(ver))</span><br><span class="line"></span><br><span class="line">list3 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>]]</span><br><span class="line">ver = list3[<span class="number">3</span>][<span class="number">1</span>]</span><br><span class="line">print(ver,type(ver))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list4 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>],<span class="literal">True</span>]</span><br><span class="line">ver = list4[<span class="number">4</span>] = <span class="literal">False</span></span><br><span class="line">print(ver)</span><br><span class="line">print(list4)</span><br></pre></td></tr></table></figure>
+      <p>##一、while循环</p>
+<p>while True：死循环，只能使用break</p>
+<p>break：  退出当前循环</p>
+<p>continue：继续下一轮循环</p>
+<p>pass  在循环体或者函数体空时防止报错</p>
 <a id="more"></a>
-<p>##二、元组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#元组：是一些列元素的组合，用逗号分割，标识符是，逗号，并且定义之后元素不能再进行修改</span></span><br><span class="line"><span class="comment">#其他用法与列表类似</span></span><br><span class="line">tuple1 = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</span><br><span class="line">print(tuple1)</span><br><span class="line">print(tuple1[<span class="number">1</span>])</span><br><span class="line">tuple1[<span class="number">5</span>][<span class="number">0</span>]=<span class="number">10</span>     <span class="comment">#元组不能修改，但是元组内的列表可以修改</span></span><br><span class="line">print(tuple1)</span><br><span class="line"><span class="comment">#注意：</span></span><br><span class="line">b=(<span class="number">1</span>)</span><br><span class="line">print(type(b))  <span class="comment">#int型，没有标识符时就不是元组</span></span><br><span class="line"></span><br><span class="line">c=(<span class="number">1</span>,)</span><br><span class="line">print(type(c))</span><br></pre></td></tr></table></figure>
-<p>##三、集合</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一种特定数据的组合，所有元素不能重复，不能修改</span></span><br><span class="line"></span><br><span class="line">set1=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>&#125;</span><br><span class="line">print(set1)     <span class="comment">#&#123;1, 2, 3, 4&#125;   集合会自动去重复</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#多用于计算补集    交集  并集  子集  超集。。。</span></span><br><span class="line">四、字典</span><br><span class="line"></span><br><span class="line"><span class="comment">#有映射关系的无序的组合，可以修改</span></span><br><span class="line">dict1 = &#123;<span class="string">"啊"</span>:<span class="string">"one"</span> , <span class="string">"我开炮"</span>:<span class="string">"连长"</span> , <span class="string">"花和尚"</span>:<span class="string">"鲁智深"</span>&#125;</span><br><span class="line">print(dict1)</span><br><span class="line">ver=dict1[<span class="string">"啊"</span>]</span><br><span class="line">print(ver,type(ver))</span><br><span class="line"></span><br><span class="line"><span class="comment">#冒号前面的是键值，键值是唯一的，并且不可以修改，</span></span><br><span class="line"><span class="comment">#冒号后面的才是可以修改的</span></span><br><span class="line">dict1[<span class="string">"啊"</span>]=<span class="string">"gggg"</span></span><br><span class="line">print(dict1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#字典嵌套只能使用在，冒号后面上，键值必须唯一</span></span><br><span class="line">dict2 = &#123;<span class="string">"四大名著"</span>:&#123;<span class="string">"西游记"</span>:<span class="string">"吴承恩"</span>,<span class="string">"水浒传"</span>:<span class="string">"罗贯中"</span>,<span class="string">"红楼梦"</span>:<span class="string">"曹雪芹"</span>&#125;&#125;</span><br><span class="line">print(dict2[<span class="string">"四大名著"</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="comment">#引入随机数</span></span><br><span class="line"></span><br><span class="line">luck_num = random.randint(<span class="number">10</span>,<span class="number">99</span>)</span><br><span class="line">luck_num_g = luck_num % <span class="number">10</span></span><br><span class="line">luck_num_s = luck_num //<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    buy_num = int(input(<span class="string">"请输入一个两位数："</span>))</span><br><span class="line">    <span class="keyword">if</span> buy_num == luck_num:</span><br><span class="line">        print(<span class="string">"一等奖"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> buy_num % <span class="number">10</span> == luck_num_s <span class="keyword">and</span> buy_num //<span class="number">10</span> == luck_num_g:</span><br><span class="line">        print(<span class="string">"二等奖"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"遗憾,没中奖"</span>)</span><br></pre></td></tr></table></figure>
+<p>##二、使用while打印乘法表</p>
+<p> 正三角</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        print(j,<span class="string">"x"</span>,i,<span class="string">"="</span>,i*j,end=<span class="string">" "</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print()</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>倒三角</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">9</span></span><br><span class="line"><span class="keyword">while</span> i &gt; <span class="number">0</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        print(j,<span class="string">"*"</span>,i,<span class="string">"="</span>,i*j,end=<span class="string">" "</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print()</span><br><span class="line">    i -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>向左三角</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> count&lt;k:</span><br><span class="line">        print(end=<span class="string">"        "</span>)</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line">    k-=<span class="number">1</span></span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        print(<span class="string">"%s*%s=%s"</span>%(j,i,i*j),end=<span class="string">"\t"</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print()</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>向左倒三角</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i &gt;<span class="number">0</span>:</span><br><span class="line">    k = <span class="number">9</span></span><br><span class="line">    <span class="keyword">while</span> k &gt; i:</span><br><span class="line">        print(end=<span class="string">"        "</span>)</span><br><span class="line">        k -= <span class="number">1</span></span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        print(<span class="string">"%s*%s=%s"</span>%(j,i,i*j),end=<span class="string">"\t"</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print()</span><br><span class="line">    i -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>##三、使用for循环</p>
+<p>常在遍历时候使用，</p>
+<p>在字典中取出键值，但可以用var.values()获得键值,用var.items()得到它本身</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var = <span class="string">"今年过年不收礼啊，"</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> var:</span><br><span class="line">    print(val)</span><br><span class="line"><span class="comment">#for循环嵌套</span></span><br><span class="line"></span><br><span class="line">var = [<span class="string">"python"</span>,<span class="string">"hello"</span>,<span class="string">"java"</span>,<span class="string">"c"</span>]</span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> var:</span><br><span class="line">    print(val)</span><br><span class="line">    <span class="keyword">for</span> res <span class="keyword">in</span> val:</span><br><span class="line">        print(res)</span><br><span class="line"></span><br><span class="line">var = &#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> var.items():</span><br><span class="line">    print(val)</span><br></pre></td></tr></table></figure>
+<p>#在二级列表的使用中，可以使用abc这样的获得相应值，要求长度相同</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</span><br><span class="line"><span class="keyword">for</span> a,b,c <span class="keyword">in</span> var:</span><br><span class="line">    print(a,b,c)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">range(a,b) a为起始，b为最大值<span class="number">-1</span>，(如果没有a那么就是从<span class="number">0</span>开始 通过<span class="keyword">for</span>循环打印乘法表</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</span><br><span class="line">        print(<span class="string">"%sx%s=%s"</span>%(j,i,i*j),end=<span class="string">"\t"</span>)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(i, <span class="number">10</span>):</span><br><span class="line">        print(<span class="string">"%sx%s=%s"</span> % (i, j, i * j), end=<span class="string">"\t"</span>)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span> - i):</span><br><span class="line">        print(end=<span class="string">"        "</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i + <span class="number">1</span>):</span><br><span class="line">        print(<span class="string">"%sx%s=%s"</span> % (j, i, i * j), end=<span class="string">"\t"</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
       
       <!-- reward -->
       
@@ -167,7 +182,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day2%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%97%E8%A1%A8%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day-6%EF%BC%9A%E5%BE%AA%E7%8E%AF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -185,19 +200,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/03/day3%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-nav-link">
+      <a href="/2020/04/03/day-7%EF%BC%9A%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            day3：数据类型转换
+            day 7：函数，字符串切片
           
         </div>
       </a>
     
     
-      <a href="/2020/04/03/day1%EF%BC%9Apython%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F%E3%80%81%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB%E3%80%81%E5%8F%98%E9%87%8F%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+      <a href="/2020/04/03/day-5%EF%BC%9A%E5%B0%8F%E7%BB%83%E4%B9%A0%E4%B8%8E%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">day1：python的常用命名方式、语句分类、变量使用</div>
+        <div class="article-nav-title">day 5：小练习与分支结构</div>
       </a>
     
   </nav>
