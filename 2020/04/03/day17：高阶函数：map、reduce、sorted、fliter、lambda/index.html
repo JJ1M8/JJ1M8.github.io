@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    day 9：format操作与数字相关方法 |  JJ1M8
+    day17：高阶函数：map、reduce、sorted、fliter、lambda |  JJ1M8
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  day 9：format操作与数字相关方法
+  day17：高阶函数：map、reduce、sorted、fliter、lambda
 </h1>
  
 
@@ -54,7 +54,7 @@
     
     <div class="article-meta">
       <a href="/2020/04/03/day17%EF%BC%9A%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%EF%BC%9Amap%E3%80%81reduce%E3%80%81sorted%E3%80%81fliter%E3%80%81lambda/" class="article-date">
-  <time datetime="2020-04-02T16:32:01.000Z" itemprop="datePublished">2020-04-03</time>
+  <time datetime="2020-04-02T16:53:54.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
       
       
@@ -120,8 +120,6 @@
 <h2 id="六、整合练习"><a href="#六、整合练习" class="headerlink" title="六、整合练习"></a>六、整合练习</h2><p>求lsd列表当中偶数组成的最大整数<br>以及奇数组成的最小整数</p>
 <p>最后，尝试一句话实现功能</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">lsd = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>]</span><br><span class="line"><span class="comment">#求偶数的最大整数</span></span><br><span class="line">res = map(int,lsd) <span class="comment">#转换为int</span></span><br><span class="line">var = filter(<span class="keyword">lambda</span> x:<span class="literal">True</span> <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span> <span class="keyword">else</span> <span class="literal">False</span>,res)</span><br><span class="line">val = sorted(var, reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#对数据整合</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a*<span class="number">10</span> + b</span><br><span class="line">res1 = reduce(func,val)</span><br><span class="line">print(res1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#求奇数的最小整数</span></span><br><span class="line">res = map(int,lsd) <span class="comment">#转换为int</span></span><br><span class="line">var = filter(<span class="keyword">lambda</span> x:<span class="literal">True</span> <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">1</span> <span class="keyword">else</span> <span class="literal">False</span>,res)</span><br><span class="line">val = sorted(var,reverse=<span class="literal">False</span>)</span><br><span class="line">res2 = reduce(func,val)</span><br><span class="line">print(res2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#求奇数的最小整数</span></span><br><span class="line">print(reduce(<span class="keyword">lambda</span> x,y:x*<span class="number">10</span>+y,sorted(filter(<span class="keyword">lambda</span> x:<span class="literal">True</span> <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">1</span> <span class="keyword">else</span> <span class="literal">False</span>,map(int,lsd)),reverse=<span class="literal">False</span>)))</span><br></pre></td></tr></table></figure>
-
-
       
       <!-- reward -->
       
@@ -193,8 +191,6 @@
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
 
     </footer>
 
@@ -204,19 +200,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/03/day16%EF%BC%9Aarmy%E5%B0%8F%E7%BB%83%E4%B9%A0%E3%80%81@property%E3%80%81%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E3%80%81%E9%99%90%E5%88%B6%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E3%80%81__repr__%E5%92%8C__str__%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            day 9：format操作与数字相关方法
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/03/day-8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" class="article-nav-link">
+      <a href="/2020/04/03/day16%EF%BC%9Aarmy%E5%B0%8F%E7%BB%83%E4%B9%A0%E3%80%81-property%E3%80%81%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E3%80%81%E9%99%90%E5%88%B6%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E3%80%81-repr-%E5%92%8C-str-%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">day 8:字符串相关方法</div>
+        <div class="article-nav-title">day16：army小练习、@property、动态添加属性和方法、限制添加属性、__repr__和__str__、类方法和静态方法</div>
       </a>
     
   </nav>
