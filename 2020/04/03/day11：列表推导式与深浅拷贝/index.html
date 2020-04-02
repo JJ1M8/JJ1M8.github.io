@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="w-day-9：format操作与数字相关方法" class="article article-type-w" itemscope
+  <article id="w-day11：列表推导式与深浅拷贝" class="article article-type-w" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -53,7 +53,7 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/03/day-9%EF%BC%9Aformat%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" class="article-date">
+      <a href="/2020/04/03/day11%EF%BC%9A%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E4%B8%8E%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-date">
   <time datetime="2020-04-02T16:32:01.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
       
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">474字</span>
+            <span class="post-count">397字</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">1分钟</span>
         </span>
     </span>
 </div>
@@ -84,6 +84,8 @@
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -96,16 +98,26 @@
       
 
       
-      <p>##一、format 格式化字符</p>
-<p>format 格式化字符 语法：通过{}和：来代替%<br>注意：format可以接受无限个参数，位置也可以不按顺序 参数也可以不使用也可以使用多次，2.6前不能为{}，2.7后可以为空</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"&#123;&#125; say hello to &#123;&#125;"</span></span><br><span class="line">str2 = str1.format(<span class="string">"jack"</span>,<span class="string">"rose"</span>)</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line">str1 = <span class="string">"&#123;1&#125; say hello to &#123;0&#125;"</span>   <span class="comment">#可以通过索引改变顺序</span></span><br><span class="line">str2 = str1.format(<span class="string">"jack"</span>,<span class="string">"rose"</span>)</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line">str1 = <span class="string">"&#123;0[1]&#125; say hello to &#123;0[1]&#125;"</span>   <span class="comment">#可以通过索引改变顺序</span></span><br><span class="line">str2 = str1.format([<span class="string">"jack"</span>,<span class="string">"rose"</span>])</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line">str1 = <span class="string">"&#123;name&#125; is &#123;age&#125; years old"</span></span><br><span class="line">str2 = str1.format(name = <span class="string">"jack"</span>, age = <span class="string">"19"</span>)</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#format在网页爬虫中的应用</span></span><br><span class="line">ur1 = <span class="string">"https://study.163.com/category/480000003121024#/?p=&#123;page&#125;"</span></span><br><span class="line">start_page = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> start_page&lt;<span class="number">10</span>:</span><br><span class="line">    ur1.format(page=start_page)</span><br><span class="line">    start_page += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">^ 居中</span></span><br><span class="line"><span class="string">&lt; 左对齐</span></span><br><span class="line"><span class="string">&gt; 右对齐(都比较少用)</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">str1 = <span class="string">"this"</span></span><br><span class="line">str2 = <span class="string">"&#123;:@^10&#125;"</span>.format(str1)</span><br><span class="line">print(str2)</span><br><span class="line">str2 = <span class="string">"&#123;:@&lt;20&#125;"</span>.format(str1)</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#调整精度</span></span><br><span class="line">str1 = <span class="string">"&#123;:.3f&#125;"</span>.format(<span class="number">3.141592</span>)</span><br><span class="line">print(str1)</span><br><span class="line">str1 = <span class="string">"%.2f"</span>%(<span class="number">1.2345</span>)</span><br><span class="line">print(str1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#进制转换</span></span><br><span class="line">str1 = <span class="string">"&#123;:b&#125;"</span>.format(<span class="number">16</span>)</span><br><span class="line">print(str1)</span><br><span class="line">str1 = <span class="string">"&#123;:d&#125;"</span>.format(<span class="number">16</span>)</span><br><span class="line">print(str1)</span><br><span class="line">str1 = <span class="string">"&#123;:o&#125;"</span>.format(<span class="number">16</span>)</span><br><span class="line">print(str1)</span><br><span class="line">str1 = <span class="string">"&#123;:x&#125;"</span>.format(<span class="number">16</span>)</span><br><span class="line">print(str1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#预留符</span></span><br><span class="line">str1 = <span class="string">"&#123;:,&#125;"</span>.format(<span class="number">123415153452</span>)<span class="comment">#123,415,153,452</span></span><br><span class="line">print(str1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#locals 打印所有元素</span></span><br><span class="line">name = <span class="string">"xiaoming"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">"xiaoming"</span></span><br><span class="line">    age = <span class="string">"18"</span></span><br><span class="line">print(locals())</span><br></pre></td></tr></table></figure>
-<p>##二、数学相关方法</p>
-<p>abs() 绝对值<br>sum() 求和<br>max() 求最大值<br>min() 求最小值<br>pow(2,3,5) 幂运算 第三个参数是幂运算的结果对它取余<br>round() 对一个数值进行四舍五入<br>range(1,10,2) 1到10，间隔2（负号指反过来） </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">5</span>]</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; len(num):</span><br><span class="line">    <span class="keyword">if</span> res &lt; num[i]:</span><br><span class="line">        res = num[i]</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line">print(res)</span><br><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> val <span class="keyword">in</span> num: <span class="comment">#通过for循环进行遍历更加方便</span></span><br><span class="line">    <span class="keyword">if</span> val&gt;res:</span><br><span class="line">        res = val</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+      <h1 id="1、列表推导式"><a href="#1、列表推导式" class="headerlink" title="1、列表推导式"></a>1、列表推导式</h1><p>通过使用列表推导式，用简洁的代码实现复杂功能<br>例如：<br>打印10与10各个数字的组合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = [(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<p>打印偶数奇数的组合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = [(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">0</span> <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">10</span>)</span><br><span class="line">       <span class="keyword">if</span> y%<span class="number">2</span>==<span class="number">1</span>]</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<p>打印ABC与123的组合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = [x+y <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">"ABC"</span> <span class="keyword">for</span> y <span class="keyword">in</span> <span class="string">"123"</span>]</span><br><span class="line">print(res)<span class="comment">#会先循环先写的</span></span><br></pre></td></tr></table></figure>
+<p>练习：<br>给一列表M打印要求数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#给一列表M打印要求数据</span></span><br><span class="line">M = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</span><br><span class="line"><span class="comment">#求 1 4 7</span></span><br><span class="line">res = [var[<span class="number">0</span>] <span class="keyword">for</span> var <span class="keyword">in</span> M]</span><br><span class="line">print(res)</span><br><span class="line"><span class="comment">#求1 5 9</span></span><br><span class="line">res = [M[i][i] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(M))]</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<p>给一列表，求每一元素的长度的列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#涉及到每一个元素就使用for var in L</span></span><br><span class="line">L = [<span class="string">"continue"</span>,<span class="string">"else"</span>,<span class="string">"if"</span>,<span class="string">"break"</span>,<span class="string">"pass"</span>,<span class="string">"def"</span>]</span><br><span class="line"><span class="comment">#res = [len(L[i]) for i in range(len(L))]</span></span><br><span class="line">res = [len(var) <span class="keyword">for</span> var <span class="keyword">in</span> L]</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
 
-<p>##三、字符相关</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">chr(32) 把ASCII码换成字符</span></span><br><span class="line"><span class="string">ord("A") 把字符转换成ASCII码</span></span><br><span class="line"><span class="string">eval()  把字符串去掉，换成数</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">num = <span class="number">1</span></span><br><span class="line">str1 = <span class="string">"num+1"</span></span><br><span class="line">print(eval(str1)) <span class="comment">#2</span></span><br></pre></td></tr></table></figure>
+<h1 id="2、深浅拷贝"><a href="#2、深浅拷贝" class="headerlink" title="2、深浅拷贝"></a>2、深浅拷贝</h1><p>1、赋值是同一内存地址，b指向a的内存地址，当a的值发生改变的时候，b也会变</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>]]</span><br><span class="line">b = a</span><br><span class="line">a.append(<span class="number">7</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<p>2、浅拷贝，拷贝第一层，第二层还是拷贝地址</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>]]</span><br><span class="line">c = copy.copy(a)</span><br><span class="line">a[<span class="number">4</span>].append(<span class="number">7</span>)</span><br><span class="line">a.append(<span class="number">8</span>)</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+<p>3、深拷贝，拷贝所有数据，全部新开辟一块内存，a变，d不会有变化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>]]</span><br><span class="line">d = copy.deepcopy(a)</span><br><span class="line">a[<span class="number">4</span>].append(<span class="number">7</span>)</span><br><span class="line">a.append(<span class="number">8</span>)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<p>以上三条输出分别为：<br>[1, 2, 3, 4, [5, 6], 7]<br>[1, 2, 3, 4, [5, 6, 7]]<br>[1, 2, 3, 4, [5, 6]]</p>
+
       
       <!-- reward -->
       
@@ -170,7 +182,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day-9%EF%BC%9Aformat%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day11%EF%BC%9A%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E4%B8%8E%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -188,17 +200,17 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/03/day-10-%E5%88%97%E8%A1%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2020/04/03/day14%EF%BC%9Atime%E6%A8%A1%E5%9D%97%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E3%80%81%E8%A3%85%E9%A5%B0%E5%99%A8%E3%80%81%E4%B8%BB%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            day 10:列表的相关操作
+            day 9：format操作与数字相关方法
           
         </div>
       </a>
     
     
-      <a href="/2020/04/03/day12%EF%BC%9A%E5%85%83%E7%A5%96%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E3%80%81pickle%E6%A8%A1%E5%9D%97/" class="article-nav-link">
+      <a href="/2020/04/03/day15%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title">day 9：format操作与数字相关方法</div>
       </a>

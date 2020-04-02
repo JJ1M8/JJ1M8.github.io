@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    day 9：format操作与数字相关方法 |  JJ1M8
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="w-day13：os模块、os.path方法、递归函数" class="article article-type-w" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  day 9：format操作与数字相关方法
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/03/day13%EF%BC%9Aos%E6%A8%A1%E5%9D%97%E3%80%81os.path%E6%96%B9%E6%B3%95%E3%80%81%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-04-02T16:32:01.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="一、os模块"><a href="#一、os模块" class="headerlink" title="一、os模块"></a>一、os模块</h2><p>os是系统自带的模块<br><strong>通过os.来进行使用</strong></p>
+<h3 id="1、os-name查询系统名"><a href="#1、os-name查询系统名" class="headerlink" title="1、os.name查询系统名"></a>1、os.name查询系统名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.name</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="2、os-system调用系统命令"><a href="#2、os-system调用系统命令" class="headerlink" title="2、os.system调用系统命令"></a>2、os.system调用系统命令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.system(<span class="string">"ipconfig"</span>) <span class="comment">#使用在cmd中可以使用的命令都可以用</span></span><br><span class="line">os.system(<span class="string">"notepad"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3、os-getcwd-返回当前工作路径"><a href="#3、os-getcwd-返回当前工作路径" class="headerlink" title="3、os.getcwd()返回当前工作路径"></a>3、os.getcwd()返回当前工作路径</h3><p>绝对路径：从盘服开始的<br>相对路径：相对于当前工作路径写出的路径 ../上一级目录</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.getcwd()</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="4、os-listdir（）-返回指定目录下的所有文件与文件夹"><a href="#4、os-listdir（）-返回指定目录下的所有文件与文件夹" class="headerlink" title="4、os.listdir（） 返回指定目录下的所有文件与文件夹"></a>4、os.listdir（） 返回指定目录下的所有文件与文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res = os.listdir(<span class="string">"G:\project\pyProject\day13"</span>)</span><br><span class="line">print(res)</span><br><span class="line">res = os.listdir() <span class="comment">#"../" 则返回上一级目录</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="5、os-remove-删除指定文件"><a href="#5、os-remove-删除指定文件" class="headerlink" title="5、os.remove 删除指定文件"></a>5、os.remove 删除指定文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.remove(<span class="string">"../txt"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="6、os-mkdir-创建目录-os-makedirs-创建多级目录"><a href="#6、os-mkdir-创建目录-os-makedirs-创建多级目录" class="headerlink" title="6、os.mkdir 创建目录 os.makedirs 创建多级目录"></a>6、os.mkdir 创建目录 os.makedirs 创建多级目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.mkdir(<span class="string">"../day14"</span>)</span><br><span class="line">os.makedirs(<span class="string">"../day14/day15/day16"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="7、os-rmdir-删除指定目录"><a href="#7、os-rmdir-删除指定目录" class="headerlink" title="7、os.rmdir 删除指定目录"></a>7、os.rmdir 删除指定目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(<span class="string">"../day14/day15/day16"</span>) <span class="comment">#删除了day16</span></span><br></pre></td></tr></table></figure>
+<h3 id="8、os-removedirs-删除路劲中所有空文件"><a href="#8、os-removedirs-删除路劲中所有空文件" class="headerlink" title="8、os.removedirs 删除路劲中所有空文件"></a>8、os.removedirs 删除路劲中所有空文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">os.removedirs(<span class="string">"../day14/day15"</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">如果文件夹中有文件不为空，则删除不掉，使用os不行</span></span><br><span class="line"><span class="string">使用shutil可以，shutil.rmtree("../day14")可以直接删除day14及其内部的东西</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h3 id="9、os-chdir-更换工作路径"><a href="#9、os-chdir-更换工作路径" class="headerlink" title="9、os.chdir 更换工作路径"></a>9、os.chdir 更换工作路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(<span class="string">"../day13"</span>)</span><br><span class="line">res = os.getcwd()</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="10、os-rename-更名-注意两个参数都是路径"><a href="#10、os-rename-更名-注意两个参数都是路径" class="headerlink" title="10、os.rename 更名,注意两个参数都是路径"></a>10、os.rename 更名,注意两个参数都是路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(<span class="string">"../day10/a.py"</span>,<span class="string">"../day10/b.py"</span>)<span class="comment">#如果不写路径就会改到其他文件夹去导致文件位置改变</span></span><br></pre></td></tr></table></figure>
+<h3 id="11、-os-walk-遍历目录下所有目录与文件"><a href="#11、-os-walk-遍历目录下所有目录与文件" class="headerlink" title="11、#os.walk 遍历目录下所有目录与文件"></a>11、#os.walk 遍历目录下所有目录与文件</h3><p>第一个参数：返回一个路径<br>第二个参数：这个路径下所有目录<br>第三个参数：这个路径下所有文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = os.walk(<span class="string">"../"</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> res: <span class="comment">#res是生成器</span></span><br><span class="line">    print(var)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、os-path方法"><a href="#二、os-path方法" class="headerlink" title="二、os.path方法"></a>二、os.path方法</h2><h3 id="1、os-path-abspath将相对路径转化为绝对路径"><a href="#1、os-path-abspath将相对路径转化为绝对路径" class="headerlink" title="1、os.path.abspath将相对路径转化为绝对路径"></a>1、os.path.abspath将相对路径转化为绝对路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#os.path.abspath</span></span><br><span class="line"><span class="comment">#将相对路径转化为绝对路径</span></span><br><span class="line">res = os.path.abspath(<span class="string">"../day10/b.py"</span>)<span class="comment">#G:\project\pyProject\day10\b\py</span></span><br><span class="line">print(res)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">在window中，文件夹使用\来显示，这样可能是转义字符，要用“\\”</span></span><br><span class="line"><span class="string">最好写成//</span></span><br><span class="line"><span class="string">之后还会遇到这样转换操作 "".replace("\\","/")</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、os-path-split-分割目录和文件名"><a href="#2、os-path-split-分割目录和文件名" class="headerlink" title="2、os.path.split 分割目录和文件名"></a>2、os.path.split 分割目录和文件名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.split 分割目录和文件名</span></span><br><span class="line">res = os.path.split(<span class="string">"G:\project\pyProject\day10/b.py"</span>)</span><br><span class="line">print(res) <span class="comment">#('G:\\project\\pyProject\\day10', 'b.py')</span></span><br></pre></td></tr></table></figure>
+<h3 id="3、os-path-join-拼接目录和文件名"><a href="#3、os-path-join-拼接目录和文件名" class="headerlink" title="3、os.path.join 拼接目录和文件名"></a>3、os.path.join 拼接目录和文件名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.join 拼接目录和文件名</span></span><br><span class="line">res = os.path.join(<span class="string">"G:\\project\\pyProject\\day10"</span>,<span class="string">"b.py"</span>)</span><br><span class="line">print(res) <span class="comment">#G;\project\pyProject\day10\b.py</span></span><br></pre></td></tr></table></figure>
+<h3 id="4、os-path-exists-判断一个路径是否存在"><a href="#4、os-path-exists-判断一个路径是否存在" class="headerlink" title="4、os.path.exists 判断一个路径是否存在"></a>4、os.path.exists 判断一个路径是否存在</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.exists 判断一个路径是否存在</span></span><br><span class="line">res = os.path.exists(<span class="string">"G:\\project\\pyProject\\day10\\b.py"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="5、os-path-isfile-判断是否是一个文件"><a href="#5、os-path-isfile-判断是否是一个文件" class="headerlink" title="5、os.path.isfile 判断是否是一个文件"></a>5、os.path.isfile 判断是否是一个文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.path.isfile(<span class="string">"G:\project\pyProject\day10\\b.py"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="6、os-path-isdir-判断是否是一个目录"><a href="#6、os-path-isdir-判断是否是一个目录" class="headerlink" title="6、os.path.isdir 判断是否是一个目录"></a>6、os.path.isdir 判断是否是一个目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.isdir 判断是否是一个目录</span></span><br><span class="line">res = os.path.isdir(<span class="string">"G:/project/pyProject/day10"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="7、os-path-getsize-获取一个文件大小"><a href="#7、os-path-getsize-获取一个文件大小" class="headerlink" title="7、os.path.getsize 获取一个文件大小"></a>7、os.path.getsize 获取一个文件大小</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.getsize 获取一个文件大小</span></span><br><span class="line">res = os.path.getsize(<span class="string">"G:\project\pyProject\day10\optionOfDict.py"</span>)</span><br><span class="line">print(res) <span class="comment">#1663字节</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、递归函数"><a href="#三、递归函数" class="headerlink" title="三、递归函数"></a>三、递归函数</h2><p>递归，自身调用自身 最重要的是找到一个出口<br>好处：精简程序执行中的重复调用<br>例如：</p>
+<h3 id="求阶乘"><a href="#求阶乘" class="headerlink" title="求阶乘"></a>求阶乘</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#求阶层 5*4*3*2*1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> func(n<span class="number">-1</span>) * n</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">res = func(4)*5 -&gt; func(3)*4*5 -&gt; func(2)*3*4*5 -&gt; func(1)*2*3*4*5</span></span><br><span class="line"><span class="string">res = 1*2*3*4*5</span></span><br><span class="line"><span class="string">注意</span></span><br><span class="line"><span class="string">每调用一次函数就会增加一层栈帧 没计算一次就会少一层栈帧</span></span><br><span class="line"><span class="string">栈帧超过999就会报错</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">res = func(<span class="number">5</span>) <span class="comment">#999报错，超出了递归的最大范围</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<p>为了防止栈溢出报错，我们需要引用尾递归方法<br>遗憾的是python目前没有对尾递归进行优化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#尾递归</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> fact_iter(n,<span class="number">1</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact_iter</span><span class="params">(num,product)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> product</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fact_iter(num<span class="number">-1</span>,product*num)</span><br><span class="line"><span class="comment"># fact_iter(4,5)</span></span><br><span class="line"><span class="comment"># fact_iter(3,20)</span></span><br><span class="line"><span class="comment"># fact_iter(2.60)</span></span><br><span class="line"><span class="comment"># fact_iter(1,120)</span></span><br><span class="line"><span class="comment"># product = 120</span></span><br><span class="line">print(fact(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="计算斐波那契额数列"><a href="#计算斐波那契额数列" class="headerlink" title="计算斐波那契额数列"></a><strong>计算斐波那契额数列</strong></h3><p>1、1、2、3、5、8、13、21、34、、、n</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcFBNQ</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span> <span class="keyword">or</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span>  funcFBNQ(n<span class="number">-2</span>) + funcFBNQ(n<span class="number">-1</span>)</span><br><span class="line"><span class="comment">#这个数为前两个数加前一个数</span></span><br><span class="line">print(funcFBNQ(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="汉诺塔游戏"><a href="#汉诺塔游戏" class="headerlink" title="汉诺塔游戏"></a><strong>汉诺塔游戏</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcHNT</span><span class="params">(n,a,b,c)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        print(a,<span class="string">"--&gt;"</span>,c)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        funcHNT(n<span class="number">-1</span>,a,c,b)</span><br><span class="line">        print(a,<span class="string">"--&gt;"</span>,c)</span><br><span class="line">        funcHNT(n<span class="number">-1</span>,b,a,c)</span><br><span class="line">funcHNT(<span class="number">3</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、超市小练习"><a href="#四、超市小练习" class="headerlink" title="四、超市小练习"></a>四、超市小练习</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-"</span></span><br><span class="line">shop_list = [[<span class="string">"健力宝"</span>,<span class="number">5.6</span>],[<span class="string">"加多宝"</span>,<span class="number">10</span>],[<span class="string">"QQ星"</span>,<span class="number">50</span>],[<span class="string">"动脉"</span>,<span class="number">100</span>]]</span><br><span class="line">buy_list = []</span><br><span class="line">prise = <span class="number">0</span></span><br><span class="line">print(<span class="string">"====================宝昌面包====================="</span>)</span><br><span class="line"><span class="keyword">for</span> num,shop <span class="keyword">in</span> enumerate(shop_list):</span><br><span class="line">    print(num,shop[<span class="number">0</span>],shop[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">"按0退出系统"</span>)</span><br><span class="line">print(<span class="string">"================================================="</span>)</span><br><span class="line"></span><br><span class="line">salary = int(input(<span class="string">"请输入你有多少salary："</span>))</span><br><span class="line"><span class="keyword">if</span> salary &gt; <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        buyNum = int(input(<span class="string">"请输入你要买的商品："</span>))</span><br><span class="line">        <span class="keyword">if</span> buyNum == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> salary &gt;= shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]:</span><br><span class="line">            print(<span class="string">"购买成功"</span>)</span><br><span class="line">            salary -= shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">            prise += shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">            buy_list.append(shop_list[buyNum<span class="number">-1</span>][<span class="number">0</span>])</span><br><span class="line">            print(<span class="string">"感谢购买，消费%s，余额%s"</span> %(shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>],salary))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"无法购买，穷逼"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"清先充钱"</span>)</span><br><span class="line">print(<span class="string">"购买清单为："</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> buy_list:</span><br><span class="line">    print(var)</span><br><span class="line">print(<span class="string">"感谢使用"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="路径中有中文报错时，在文件头加上即可-coding-utf-8"><a href="#路径中有中文报错时，在文件头加上即可-coding-utf-8" class="headerlink" title="路径中有中文报错时，在文件头加上即可 #-- coding: utf-8 --"></a><strong>路径中有中文报错时，在文件头加上即可 #-<em>- coding: utf-8 -</em>-</strong></h3>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/03/day13%EF%BC%9Aos%E6%A8%A1%E5%9D%97%E3%80%81os.path%E6%96%B9%E6%B3%95%E3%80%81%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/04/03/day12%EF%BC%9A%E5%85%83%E7%A5%96%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E3%80%81pickle%E6%A8%A1%E5%9D%97/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            day 9：format操作与数字相关方法
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/03/day14%EF%BC%9Atime%E6%A8%A1%E5%9D%97%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E3%80%81%E8%A3%85%E9%A5%B0%E5%99%A8%E3%80%81%E4%B8%BB%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">day 9：format操作与数字相关方法</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        LSJ
+      </li>
+      <li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="JJ1M8"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>
