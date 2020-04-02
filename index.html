@@ -75,6 +75,77 @@
     
     
     
+    <article id="post-my-first-blog" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/02/my-first-blog/"
+    >my-first-blog</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/02/my-first-blog/" class="article-date">
+  <time datetime="2020-04-02T13:56:40.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>@<a href="目录">TOC</a></p>
+<h2 id="一、map"><a href="#一、map" class="headerlink" title="一、map"></a>一、map</h2><p>map(fn,lsd)<br>fn: 可以是自己写的，也可以是系统自带的<br>lsd:  一个序列<br>功能：把lsd中每一个元素分别作用在fn上</p>
+<p>例如：字符串列表变为int列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">map(fn,lsd)</span></span><br><span class="line"><span class="string">fn: 可以是自己写的，也可以是系统自带的</span></span><br><span class="line"><span class="string">lsd:  一个序列</span></span><br><span class="line"><span class="string">功能：把lsd中每一个元素分别作用在fn上</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment">#比如变为int列表</span></span><br><span class="line">L = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>]</span><br><span class="line">L1 = []</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> L:</span><br><span class="line">    L1.append(int(var))</span><br><span class="line">print(L1)</span><br><span class="line"></span><br><span class="line">res = list(map(int,L)) <span class="comment">#分配进行处理，即把L都用int转换成int型</span></span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(key)</span>:</span></span><br><span class="line">    dict1 = &#123;<span class="string">"1"</span>:<span class="number">1</span>,<span class="string">"2"</span>:<span class="number">2</span>,<span class="string">"3"</span>:<span class="number">3</span>,<span class="string">"4"</span>:<span class="number">4</span>,<span class="string">"5"</span>:<span class="number">5</span>,<span class="string">"6"</span>:<span class="number">6</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> dict1[key]</span><br><span class="line">res = list(map(convert,L))</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+      
+      <a class="article-more-link" href="/2020/04/02/my-first-blog/">阅读更多...</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-hello-world" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -112,19 +183,9 @@
 
       
       <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+      
+      <a class="article-more-link" href="/2020/04/02/hello-world/">阅读更多...</a>
+      
       
       <!-- reward -->
       
