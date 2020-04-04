@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="我是僵尸，我要当一个厉害的人" />
+    
+    <title>
+      day1：python的常用命名方式、语句分类、变量使用 - JJ1M8
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">LSJ</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">LSJ</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">day1：python的常用命名方式、语句分类、变量使用</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/04/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/python">python</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/python">python</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>##一、python文件命名方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#常常使用驼峰命名法或者是下划线分割法</span></span><br><span class="line"><span class="comment">#并且不能使用关键字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#文件名：使用中文不会报错，除了第一天的代码，第二天开始都不要使用中文</span></span><br><span class="line">    <span class="comment">#1.可以使用中文</span></span><br><span class="line">    <span class="comment">#2.可以使用数字但是不要全部是数字</span></span><br><span class="line">    <span class="comment">#3.可以使用_或者-等分割字符分割</span></span><br><span class="line">    <span class="comment">#4,文件名要有描述性</span></span><br><span class="line">    <span class="comment">#5.不要和系统关键字冲突</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python后缀文件</span></span><br><span class="line"><span class="comment">#.py    经常使用的脚本文件</span></span><br><span class="line"><span class="comment">#.pyc   临时文件</span></span><br><span class="line"><span class="comment">#.pyw   开发纯图形化界面程序的文件</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>##二、python语句分分类、注释的使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注释：</span></span><br><span class="line"><span class="comment">#单行注释使用#</span></span><br><span class="line"><span class="comment">#多行注释使用</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">这样里边的内容都是注释</span></span><br><span class="line"><span class="string">我是多行注释，在run的时候不会执行里边的内容</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#语句分类：</span></span><br><span class="line"><span class="comment">#单行语句、代码块</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"oaoaoaoaoaoaoaoao sdadfasfsa"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#代码组</span></span><br><span class="line"><span class="keyword">if</span> <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"true"</span>)</span><br><span class="line">    print(<span class="string">"我是真"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变量看做是一个容器</span></span><br><span class="line"><span class="comment"># a = "hello word"</span></span><br><span class="line"><span class="comment"># print(a)</span></span><br><span class="line"><span class="comment"># print("a")#print会自己换行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#使用ctrl+？可以实现多行注释，</span></span><br></pre></td></tr></table></figure>
+<p>##三、变量的命名方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">#1、python3版本支持中文命名，一般不用</span></span><br><span class="line">    <span class="comment">#2、只能以数字，字母下划线组成，</span></span><br><span class="line">    <span class="comment">#3、数字不能作为开头</span></span><br><span class="line">    <span class="comment">#4、下划线作为开头是由特殊意义的，__私有，代表了集成式的继承特性</span></span><br><span class="line">    <span class="comment">#5、python严格区分大小写</span></span><br><span class="line">    <span class="comment">#6、变量命名需要有描述性</span></span><br><span class="line">    <span class="comment">#7、不能与关键字冲突</span></span><br><span class="line"></span><br><span class="line">age1=<span class="number">18</span></span><br><span class="line">age2=<span class="number">18</span></span><br><span class="line">age3=<span class="number">18</span></span><br><span class="line">print(age1,id(age1))</span><br><span class="line">print(age2,id(age2))</span><br><span class="line">print(age3,id(age3))</span><br><span class="line">age1=age2=age3=<span class="number">18</span></span><br><span class="line">print(age1,id(age1))</span><br><span class="line">print(age2,id(age2))</span><br><span class="line">print(age3,id(age3))</span><br><span class="line"><span class="comment">#-5，会优先去看内存中是否有，如果有，那么地址就是一样的</span></span><br><span class="line"></span><br><span class="line">name,age,sex=<span class="string">"name"</span>,<span class="number">18</span>,<span class="string">"women"</span>  <span class="comment">#变量可以对应接收</span></span><br><span class="line">print(name)</span><br><span class="line">print(age)</span><br><span class="line">print(sex)</span><br><span class="line"></span><br><span class="line">a,*b,c=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>  <span class="comment">#b,看做一个垃圾站，接收所有没人要的值，取成首地址，看成数组</span></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+<p>##四、系统默认有6个基本类型<br>    1、Number    类型<br>        int<br>        float<br>            3.141526535<br>        bool<br>            True<br>            False<br>        complex 复数（由实部+虚部组成）<br>            a=实数+虚数（j）  1+1i<br>    2、string    字符型<br>        单引号定义   ‘’<br>        双引号定义   “”<br>        三引号<br>        #转义字符<br>    3、list      列表型<br>        a = [1,2,3]<br>    4、tuple     元组型<br>        a = (1,2,3)<br>        a = ()#空元组<br>    5、dict      字典型<br>        有映射关系的无序的数据组合<br>        有空字典<br>        a = {“a”:1,”b”:2,”c”:3}<br>    6、set       集合型<br>        一组特定数据的无序集合，所有数据不会重复<br>        a = {1,2,3,4,5}</p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/04/03/day2%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%97%E8%A1%A8%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8/">day2：基本数据类型列表、集合、元组、字典</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/04/03/%E4%BB%8E%E9%AB%98%E8%80%83%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%91%98/">从高考到程序员</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://jj1m8.github.io">LSJ</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://jj1m8.github.io/2020/04/03/day1%EF%BC%9Apython%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F%E3%80%81%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB%E3%80%81%E5%8F%98%E9%87%8F%E4%BD%BF%E7%94%A8/">http://jj1m8.github.io/2020/04/03/day1%EF%BC%9Apython%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F%E3%80%81%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB%E3%80%81%E5%8F%98%E9%87%8F%E4%BD%BF%E7%94%A8/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://jj1m8.github.io">LSJ</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="http://jj1m8.github.io">LSJ</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

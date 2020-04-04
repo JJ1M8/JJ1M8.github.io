@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="我是僵尸，我要当一个厉害的人" />
+    
+    <title>
+      day16：army小练习、@property、动态添加属性和方法、限制添加属性、__repr__和__str__、类方法和静态方法 - JJ1M8
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、army小练习"><span class="toc-text">一、army小练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、-property"><span class="toc-text">二、@property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、动态添加属性和方法"><span class="toc-text">三、动态添加属性和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、限制添加属性"><span class="toc-text">四、限制添加属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、repr和str"><span class="toc-text">五、repr和str</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、类方法和静态方法"><span class="toc-text">六、类方法和静态方法</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">LSJ</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">LSJ</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">day16：army小练习、@property、动态添加属性和方法、限制添加属性、__repr__和__str__、类方法和静态方法</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/04/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/python">python</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/python">python</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="一、army小练习"><a href="#一、army小练习" class="headerlink" title="一、army小练习"></a>一、army小练习</h2><p>使用面向对象，实现army练习<br>创建一支军队：骑兵、法师、弓箭手<br>将军可以下达命令指挥军队</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">创建一支军队：骑兵、法师、弓箭手</span></span><br><span class="line"><span class="string">将军可以指挥军队下达命令</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cavalry</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"My iron rides on you!"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">defend</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"cavalry defend!"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Archer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"My arrow is extremely accurate!"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">defend</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"archer defend!"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Magician</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"My magic is infinite!"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">defend</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"magician defend!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    army = []</span><br><span class="line">    c = Cavalry()</span><br><span class="line">    m = Magician()</span><br><span class="line">    a = Archer()</span><br><span class="line"></span><br><span class="line">    army.append(c)</span><br><span class="line">    army.append(a)</span><br><span class="line">    army.append(m)</span><br><span class="line"></span><br><span class="line">    order = input(<span class="string">"please order the army:"</span>)</span><br><span class="line">    <span class="keyword">if</span> order == <span class="string">"attack"</span>:</span><br><span class="line">        <span class="keyword">for</span> var <span class="keyword">in</span> army:</span><br><span class="line">            var.attack()</span><br><span class="line">    <span class="keyword">elif</span> order == <span class="string">"defend"</span>:</span><br><span class="line">        <span class="keyword">for</span> var <span class="keyword">in</span> army:</span><br><span class="line">            var.defend()</span><br><span class="line">    <span class="keyword">elif</span> order == <span class="string">"flatten it"</span>:</span><br><span class="line">        <span class="keyword">for</span> var <span class="keyword">in</span> army:</span><br><span class="line">            <span class="keyword">if</span> isinstance(var,Cavalry):</span><br><span class="line">                var.attack()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                var.defend()</span><br><span class="line">    <span class="keyword">elif</span> order == <span class="string">"shoot it"</span>:</span><br><span class="line">        <span class="keyword">for</span> var <span class="keyword">in</span> army:</span><br><span class="line">            <span class="keyword">if</span> isinstance(var,Archer):</span><br><span class="line">                var.attack()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                var.defend()</span><br><span class="line">    <span class="keyword">elif</span> order == <span class="string">"magic it"</span>:</span><br><span class="line">        <span class="keyword">for</span> var <span class="keyword">in</span> army:</span><br><span class="line">            <span class="keyword">if</span> isinstance(var,Magician):</span><br><span class="line">                var.attack()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                var.defend()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"The wind is too hard to hear the order!"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>运行效果</strong><br>please order the army:magic it<br>cavalry defend!<br>archer defend!<br>My magic is infinite!</p>
+<h2 id="二、-property"><a href="#二、-property" class="headerlink" title="二、@property"></a>二、@property</h2><p>把一个方法当做属性来用<br>例如在方法前加上@property<br>会导致私有属性去私有化</p>
+<p>使用@age.setter注意，三个age，必须是相同的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把一个方法当做属性来用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,n,age)</span>:</span></span><br><span class="line">        self.name = n</span><br><span class="line">        self.__age = age</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line"><span class="meta">    @age.setter #注意，三个age，必须是相同的</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        self.__age = n</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Person(<span class="string">"小红"</span>,<span class="number">18</span>)</span><br><span class="line">    print(p.name)</span><br><span class="line">    <span class="comment">#通过property可以像属性一样使用</span></span><br><span class="line">    p.age = <span class="number">21</span></span><br><span class="line">    print(p.age) <span class="comment">#导致私有属性去私有化</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、动态添加属性和方法"><a href="#三、动态添加属性和方法" class="headerlink" title="三、动态添加属性和方法"></a>三、动态添加属性和方法</h2><p><strong>动态添加属性</strong>：类内没有的属性，可以直接添加</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#动态添加属性</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"my name is %s"</span>%self.name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Person()</span><br><span class="line">    <span class="comment">#动态添加一个属性给当前实例,仅限于当前实例访问，其他实例不可以访问</span></span><br><span class="line">    p.name = <span class="string">"js"</span></span><br><span class="line">    print(p.name)</span><br></pre></td></tr></table></figure>
+<p><strong>动态添加方法</strong>：<br>需要引用from types import MethodType<br>可以将一个类外的函数绑定给对象<br>tell是要绑定的函数，p是函数绑定到被指定的实例<br>    p.speak = MethodType(tell,p)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可以把一个方法动态的添加</span></span><br><span class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</span><br><span class="line"></span><br><span class="line"><span class="comment">#动态添加属性</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"my name is %s"</span>%self.name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Person()</span><br><span class="line">    <span class="comment">#动态添加一个属性给当前实例,仅限于当前实例访问，其他实例不可以访问</span></span><br><span class="line">    p.name = <span class="string">"js"</span></span><br><span class="line">    print(p.name)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#动态添加方法</span></span><br><span class="line">    <span class="comment">#tell是要绑定的函数，p是函数绑定到被指定的实例</span></span><br><span class="line">    p.speak = MethodType(tell,p)</span><br><span class="line">    p.speak()</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、限制添加属性"><a href="#四、限制添加属性" class="headerlink" title="四、限制添加属性"></a>四、限制添加属性</h2><p>在类内添加<strong>slots</strong> = (“name”,)<br>可以现在添加属性，注意这里是元祖。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="comment">#限制添加属性</span></span><br><span class="line">    __slots__ = (<span class="string">"name"</span>,) <span class="comment">#注意这里是元祖，就算只有一个元素也必须要添加逗号</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Person(<span class="string">"js"</span>,<span class="number">11</span>) <span class="comment">#AttributeError: 'Person' object has no attribute 'age'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="五、repr和str"><a href="#五、repr和str" class="headerlink" title="五、repr和str"></a>五、<strong>repr</strong>和<strong>str</strong></h2><p>当调用print打印实例的时候，才会调用str<br>而repr在文件交互模式下输入实例，按下回车的时候会自动调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name = <span class="string">"jack"</span>,age = <span class="number">19</span>)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestStr</span><span class="params">(Test)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span><span class="comment">#当str不存在的时候，repr=str</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"__repr__: %s,%s"</span>%(self.name,self.age)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"__str__: %s,%s"</span>%(self.name,self.age)</span><br><span class="line"></span><br><span class="line">t = TestStr()</span><br><span class="line">print(t.name)</span><br><span class="line">print(t) <span class="comment">#当调用print打印实例的时候，才会调用str</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#而repr在文件交互模式下输入实例，按下回车的时候会自动调用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="六、类方法和静态方法"><a href="#六、类方法和静态方法" class="headerlink" title="六、类方法和静态方法"></a>六、类方法和静态方法</h2><p>它们都可以直接通过类名来调用<br><strong>在写接口的时候，会使用这样的方法，这样就不用一直创建实例来调用le</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="comment">#类属性</span></span><br><span class="line">    name = <span class="string">"jeck"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span> <span class="comment">#self 接收的是rose</span></span><br><span class="line">        print(self.name)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(cls)</span>:</span>   <span class="comment">#cls接收类，打印类属性</span></span><br><span class="line">        print(cls.name)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">()</span>:</span>     <span class="comment">#</span></span><br><span class="line">        print(Person.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Person(<span class="string">"rose"</span>)</span><br><span class="line">    p.tell()    <span class="comment">#rose</span></span><br><span class="line">    p.say()     <span class="comment">#jeck</span></span><br><span class="line">    p.talk()    <span class="comment">#jeck</span></span><br><span class="line"></span><br><span class="line">    Person.tell(p)  <span class="comment">#rose 这种写法不实用</span></span><br><span class="line">    Person.say()    <span class="comment">#jeck</span></span><br><span class="line">    Person.talk()   <span class="comment">#jeck</span></span><br></pre></td></tr></table></figure>
+<p><strong>练习</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,year = <span class="number">0</span>,month = <span class="number">0</span>,day = <span class="number">0</span>)</span>:</span></span><br><span class="line">        self.year = year</span><br><span class="line">        self.month = month</span><br><span class="line">        self.day = day</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.year,self.month,self.day)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_date</span><span class="params">(string_date)</span>:</span></span><br><span class="line">        year, month, day = string_date.split(<span class="string">"-"</span>)</span><br><span class="line">        date1 = Date(year,month,day) <span class="comment">#这里必须为类名，如果类名变化，也需要变化</span></span><br><span class="line">        <span class="keyword">return</span> date1</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_dateL</span><span class="params">(cls,string_date)</span>:</span></span><br><span class="line">        year, month, day = string_date.split(<span class="string">"-"</span>)</span><br><span class="line">        date1 = cls(year, month, day) <span class="comment">#这里为cls而不是类名，可以随意修改类名</span></span><br><span class="line">        <span class="keyword">return</span> date1</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    假设用户输入2020-3-13</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    t = Date.get_date(<span class="string">"2020-3-13"</span>)</span><br><span class="line">    t.show()</span><br><span class="line">    t = Date.get_dateL(<span class="string">"2020-3-13"</span>)</span><br><span class="line">    t.show()</span><br></pre></td></tr></table></figure>
+<p>注意：当需要对输入进行分割用split</p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/04/03/day17%EF%BC%9A%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%EF%BC%9Amap%E3%80%81reduce%E3%80%81sorted%E3%80%81fliter%E3%80%81lambda/">day17：高阶函数：map、reduce、sorted、fliter、lambda</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/04/03/day15%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">day15：面向对象</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://jj1m8.github.io">LSJ</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://jj1m8.github.io/2020/04/03/day16%EF%BC%9Aarmy%E5%B0%8F%E7%BB%83%E4%B9%A0%E3%80%81-property%E3%80%81%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E3%80%81%E9%99%90%E5%88%B6%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E3%80%81-repr-%E5%92%8C-str-%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/">http://jj1m8.github.io/2020/04/03/day16%EF%BC%9Aarmy%E5%B0%8F%E7%BB%83%E4%B9%A0%E3%80%81-property%E3%80%81%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E3%80%81%E9%99%90%E5%88%B6%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E3%80%81-repr-%E5%92%8C-str-%E3%80%81%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://jj1m8.github.io">LSJ</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="http://jj1m8.github.io">LSJ</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

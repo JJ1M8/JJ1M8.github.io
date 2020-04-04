@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="我是僵尸，我要当一个厉害的人" />
+    
+    <title>
+      day 8:字符串相关方法 - JJ1M8
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串内置方法："><span class="toc-text">字符串内置方法：</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">LSJ</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">LSJ</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">day 8:字符串相关方法</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/04/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/python">python</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/python">python</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="字符串内置方法："><a href="#字符串内置方法：" class="headerlink" title="字符串内置方法："></a>字符串内置方法：</h2><p>dir（） 查询这个类型的数据有什么操作方法</p>
+<p>通过ctrl+鼠标键可以查看使用方法</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"hello world"</span></span><br><span class="line">print(dir(str1))</span><br><span class="line"></span><br><span class="line"><span class="comment">#capitalize 整个字符串的首字母大写</span></span><br><span class="line">str2 = str1.capitalize()</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#title 每个单词的首字母大写</span></span><br><span class="line">str3 = str1.title()</span><br><span class="line">print(str3)</span><br><span class="line"></span><br><span class="line"><span class="comment">#upper 所有字母大写</span></span><br><span class="line">str4 = str1.upper()</span><br><span class="line">print(str4)</span><br><span class="line"></span><br><span class="line"><span class="comment">#lower 所有字母小写</span></span><br><span class="line">str5 = str4.lower()</span><br><span class="line">print(str5)</span><br><span class="line"></span><br><span class="line"><span class="comment">#swapcase 大小写互换</span></span><br><span class="line">str6 = str5.swapcase()</span><br><span class="line">print(str6)</span><br><span class="line"></span><br><span class="line"><span class="comment">#count 查询字符在字符串出现的次数,可以自定义查找位置</span></span><br><span class="line">res = str1.count(<span class="string">"o"</span>,<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#find 查找某字符出现的位置,默认只查询一个</span></span><br><span class="line">res = str1.find(<span class="string">"o"</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#startswith 判断是否以某个字符串开头，可以加区间</span></span><br><span class="line">res = str1.startswith(<span class="string">"o"</span>,<span class="number">4</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#endswith 判断是否以某一个字符串借位</span></span><br><span class="line">res = str1.endswith(<span class="string">"d"</span>,<span class="number">4</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#isupper 判断是否都是大写字母</span></span><br><span class="line"><span class="comment">#islower</span></span><br><span class="line">res = str1.isupper()</span><br><span class="line">print(res)</span><br><span class="line">res = str1.islower()</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#isalnum 判断字符串是否都是由数值，字母，汉字组成</span></span><br><span class="line">str1 = <span class="string">"this中123"</span></span><br><span class="line">res = str1.isalnum()</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#isdigit 判断字符串是否由十进制数值组成(这个比较常用)</span></span><br><span class="line"><span class="comment">#isdecimal 判断是否由数值组成de1字符串</span></span><br><span class="line"><span class="comment">#isnumeric 判断是否由数字组成的字符串</span></span><br><span class="line">str1 = <span class="string">"123"</span></span><br><span class="line">res = str1.isdigit()</span><br><span class="line">print(res)</span><br><span class="line">res = str1.isdecimal()</span><br><span class="line">print(res)</span><br><span class="line">res = str1.isnumeric()</span><br><span class="line">print(res)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">isdigit()</span></span><br><span class="line"><span class="string">True: Unicode数字，byte数字（单字节），全角数字（双字节），罗马数字</span></span><br><span class="line"><span class="string">False: 汉字数字</span></span><br><span class="line"><span class="string">Error: 无</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">isdecimal()</span></span><br><span class="line"><span class="string">True: Unicode数字，，全角数字（双字节）</span></span><br><span class="line"><span class="string">False: 罗马数字，汉字数字</span></span><br><span class="line"><span class="string">Error: byte数字（单字节）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">isnumeric()</span></span><br><span class="line"><span class="string">True: Unicode数字，全角数字（双字节），罗马数字，汉字数字</span></span><br><span class="line"><span class="string">False: 无</span></span><br><span class="line"><span class="string">Error: byte数字（单字节）</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment">#isspace 判断字符串是否是由空白符组成</span></span><br><span class="line">str1 = <span class="string">"\n"</span></span><br><span class="line">res = str1.isspace()</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#istitle 判断是否每一个字母首字母都大写</span></span><br><span class="line">str1 = <span class="string">"Hello World"</span></span><br><span class="line">res = str1.istitle()</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#len 计算字符串的长度</span></span><br><span class="line">res = len(str1)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">#split 按照指定的字符进行切分，默认按照空格</span></span><br><span class="line">str2 = str1.split(<span class="string">" "</span>)</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#splitlines 按照换行进行泄愤</span></span><br><span class="line">str1 = <span class="string">"this is \n a \n test"</span></span><br><span class="line">str2 = str1.splitlines()</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#join 字符串拼接</span></span><br><span class="line">str1 = <span class="string">"@"</span></span><br><span class="line">str2 = <span class="string">"this"</span></span><br><span class="line">str3 = str1.join(str2) <span class="comment">#t@h@i@s</span></span><br><span class="line">print(str3)</span><br><span class="line">str1 = <span class="string">"@"</span></span><br><span class="line">str2 = [<span class="string">"this"</span>,<span class="string">"is"</span>,<span class="string">"a"</span>,<span class="string">"test"</span>]</span><br><span class="line">str3 = str1.join(str2) <span class="comment">#this@is@a@test</span></span><br><span class="line">print(str3)</span><br><span class="line"></span><br><span class="line"><span class="comment">#zfill 填充字符串</span></span><br><span class="line">str1 = <span class="string">"this"</span></span><br><span class="line">str2 = str1.zfill(<span class="number">20</span>)<span class="comment">#0000000000000000this</span></span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#center 用指定字符填充，然后字符串居中</span></span><br><span class="line">str1 = <span class="string">"this"</span></span><br><span class="line">str2 = str1.center(<span class="number">10</span>,<span class="string">"A"</span>) <span class="comment">#AAAthisAAA</span></span><br><span class="line">print(str2)</span><br><span class="line"><span class="comment">#rjust</span></span><br><span class="line">str1 = <span class="string">"this"</span></span><br><span class="line">str2 = str1.rjust(<span class="number">10</span>,<span class="string">"@"</span>) <span class="comment">#@@@@@@this</span></span><br><span class="line">print(str2)</span><br><span class="line"><span class="comment">#ljust</span></span><br><span class="line">str1 = <span class="string">"this"</span></span><br><span class="line">str2 = str1.ljust(<span class="number">10</span>,<span class="string">"@"</span>) <span class="comment">#this@@@@@@</span></span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#strip 取出两头某之丰富</span></span><br><span class="line">str1 = <span class="string">"\nthis\n"</span></span><br><span class="line">str2 = str1.strip()</span><br><span class="line">print(str2)</span><br><span class="line"><span class="comment">#rstrip 从右边去掉某个字符</span></span><br><span class="line">str1 = <span class="string">"\nthis\n"</span></span><br><span class="line">str2 = str1.rstrip()</span><br><span class="line">print(str2)</span><br><span class="line"><span class="comment">#lstrip 从右边去掉某个字符</span></span><br><span class="line">str1 = <span class="string">"\nthis\n"</span></span><br><span class="line">str2 = str1.lstrip()</span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#maketrans 和 translate</span></span><br><span class="line">str1 = <span class="string">"this is test"</span></span><br><span class="line">str2 = str1.maketrans(<span class="string">"t"</span>,<span class="string">"T"</span>) <span class="comment">#制作映射表</span></span><br><span class="line">print(str2)</span><br><span class="line">str3 = str1.translate(str2) <span class="comment">#传入映射表</span></span><br><span class="line">print(str3)</span><br><span class="line"></span><br><span class="line"><span class="comment">#replace 替换 (更加好用)</span></span><br><span class="line">str2 = str1.replace(<span class="string">"t"</span>,<span class="string">"T"</span>,<span class="number">2</span>)</span><br><span class="line">print(str2)</span><br></pre></td></tr></table></figure>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/04/03/day-9%EF%BC%9Aformat%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%95%B0%E5%AD%97%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/">day 9：format操作与数字相关方法</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/04/03/day-7%EF%BC%9A%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87/">day 7：函数，字符串切片</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://jj1m8.github.io">LSJ</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://jj1m8.github.io/2020/04/03/day-8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/">http://jj1m8.github.io/2020/04/03/day-8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://jj1m8.github.io">LSJ</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="http://jj1m8.github.io">LSJ</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

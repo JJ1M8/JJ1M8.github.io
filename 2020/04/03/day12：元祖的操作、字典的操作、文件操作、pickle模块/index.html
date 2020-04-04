@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="我是僵尸，我要当一个厉害的人" />
+    
+    <title>
+      day12：元祖的操作、字典的操作、文件操作、pickle模块 - JJ1M8
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、元祖遍历"><span class="toc-text">一、元祖遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用for循环遍历"><span class="toc-text">使用for循环遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用while循环遍历"><span class="toc-text">使用while循环遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元祖的-、"><span class="toc-text">元祖的+、*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、元祖常用方法"><span class="toc-text">二、元祖常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、查询结果-index"><span class="toc-text">1、查询结果 index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、查询数量-count"><span class="toc-text">2、查询数量 count</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、元祖推导式"><span class="toc-text">3、元祖推导式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、字典的操作"><span class="toc-text">三、字典的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的创建"><span class="toc-text">字典的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的遍历"><span class="toc-text">字典的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、字典的内置方法"><span class="toc-text">四、字典的内置方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、items-字典转化为类似元祖的方式"><span class="toc-text">1、items 字典转化为类似元祖的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、keys-将字典所有key组合成一个序列"><span class="toc-text">2、keys    将字典所有key组合成一个序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、values-将字典所有value组合成一个序列"><span class="toc-text">3、values  将字典所有value组合成一个序列**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、复制-copy"><span class="toc-text">4、复制 copy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、get-根据key，返回value"><span class="toc-text">5、get 根据key，返回value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、pop-移除指定元素，返回键对应值，popitem-删除最后一个，字典为空，则报错"><span class="toc-text">6、pop 移除指定元素，返回键对应值，popitem() 删除最后一个，字典为空，则报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、setdefault-添加一个键，如果存在则不进行操作"><span class="toc-text">7、setdefault 添加一个键，如果存在则不进行操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、update-没有的键值会添加，已有的会进行更新"><span class="toc-text">8、update 没有的键值会添加，已有的会进行更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、文件操作"><span class="toc-text">五、文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#w-write-写，如果没有这个人间会自动创建一个）"><span class="toc-text">w(write 写，如果没有这个人间会自动创建一个）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r-read-读：read读取全部、readline读取一行、readlines以行为单位全部读取"><span class="toc-text">r(read 读：read读取全部、readline读取一行、readlines以行为单位全部读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-append-追加，如果没有这个文件则创建一个，如果有则在文件末尾追加"><span class="toc-text">a(append 追加，如果没有这个文件则创建一个，如果有则在文件末尾追加)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#w-读写权限-会覆盖之前内容（先清空再覆盖"><span class="toc-text">w+ 读写权限 会覆盖之前内容（先清空再覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r-读写-（不会先清空再覆盖，即没有创建新文件的权限"><span class="toc-text">r+ 读写  （不会先清空再覆盖，即没有创建新文件的权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-读写-（不会清除文件，而是在文件尾部追加）"><span class="toc-text">a+ 读写 （不会清除文件，而是在文件尾部追加）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wb-二进制写"><span class="toc-text">wb 二进制写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rb-二进制读"><span class="toc-text">rb 二进制读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ab-二进制追加写"><span class="toc-text">ab 二进制追加写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要close"><span class="toc-text">为什么要close</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#with语法，不用手动关闭文件，执行结束，自动关闭文件"><span class="toc-text">with语法，不用手动关闭文件，执行结束，自动关闭文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、pickle模块"><span class="toc-text">六、pickle模块</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">LSJ</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">LSJ</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">day12：元祖的操作、字典的操作、文件操作、pickle模块</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/04/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/python">python</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/python">python</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="一、元祖遍历"><a href="#一、元祖遍历" class="headerlink" title="一、元祖遍历"></a>一、元祖遍历</h2><h3 id="使用for循环遍历"><a href="#使用for循环遍历" class="headerlink" title="使用for循环遍历"></a>使用for循环遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> t:</span><br><span class="line">    print(var)</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">t = ((<span class="number">1</span>,<span class="number">2</span>),(<span class="number">3</span>,<span class="number">4</span>),(<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> t:</span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> var:</span><br><span class="line">        print(val)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="使用while循环遍历"><a href="#使用while循环遍历" class="headerlink" title="使用while循环遍历"></a>使用while循环遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> i &lt; len(t):</span><br><span class="line">     print(t[i])</span><br><span class="line">     i = i+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="元祖的-、"><a href="#元祖的-、" class="headerlink" title="元祖的+、*"></a>元祖的+、*</h3><p>+两个元祖合并，生成新元祖<br>*一个元祖重复输出，生成新元祖</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">t1 = (<span class="number">6</span>,<span class="number">7</span>)</span><br><span class="line">t2 = t + t1</span><br><span class="line">print(t2) <span class="comment">#元祖不能改变</span></span><br><span class="line">t2 = t * <span class="number">3</span></span><br><span class="line">print(t2)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、元祖常用方法"><a href="#二、元祖常用方法" class="headerlink" title="二、元祖常用方法"></a>二、元祖常用方法</h2><p>由于元祖不能改变，所以其方法也少</p>
+<h3 id="1、查询结果-index"><a href="#1、查询结果-index" class="headerlink" title="1、查询结果 index"></a><strong>1、查询结果 index</strong></h3><p>输入下标，返回元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查询结果</span></span><br><span class="line">res = t.index(<span class="number">2</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="2、查询数量-count"><a href="#2、查询数量-count" class="headerlink" title="2、查询数量 count"></a><strong>2、查询数量 count</strong></h3><p>查询输入元素的出现次数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查询数量</span></span><br><span class="line">res = t.count(<span class="number">4</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="3、元祖推导式"><a href="#3、元祖推导式" class="headerlink" title="3、元祖推导式"></a><strong>3、元祖推导式</strong></h3><p>产生生成器，可以使用for循环遍历</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">res = (var**<span class="number">2</span> <span class="keyword">for</span> var <span class="keyword">in</span> t)</span><br><span class="line">print(res)      <span class="comment">#generator产生生成器</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> res: <span class="comment">#可以通过for、next遍历</span></span><br><span class="line">    print(var)</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、字典的操作"><a href="#三、字典的操作" class="headerlink" title="三、字典的操作"></a>三、字典的操作</h2><h3 id="字典的创建"><a href="#字典的创建" class="headerlink" title="字典的创建"></a><strong>字典的创建</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;</span><br><span class="line">print(dict1,type(dict1))</span><br><span class="line"></span><br><span class="line">dict2 = dict([[<span class="string">"a"</span>,<span class="number">1</span>],[<span class="string">"b"</span>,<span class="number">2</span>]])<span class="comment">#通过转换实现，少用</span></span><br><span class="line">print(dict2,type(dict2))</span><br><span class="line"></span><br><span class="line">dict3 = dict(&#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;)<span class="comment">#转换，把字典转换成字典</span></span><br><span class="line">print(dict3,type(dict3))</span><br><span class="line"></span><br><span class="line">dict4 = dict(a=<span class="number">1</span>, b=<span class="number">2</span>, c=<span class="number">3</span>)</span><br><span class="line">print(dict4,type(dict4))</span><br><span class="line"></span><br><span class="line">dict5 = dict(zip((<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"e"</span>,<span class="string">"c"</span>),(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)))<span class="comment">#长度不同，以最短的为主</span></span><br><span class="line">print(dict5,type(dict5))</span><br></pre></td></tr></table></figure>
+<h3 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a><strong>字典的遍历</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> dict5.items():</span><br><span class="line">    print(key,value)</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、字典的内置方法"><a href="#四、字典的内置方法" class="headerlink" title="四、字典的内置方法"></a>四、字典的内置方法</h2><h3 id="1、items-字典转化为类似元祖的方式"><a href="#1、items-字典转化为类似元祖的方式" class="headerlink" title="1、items 字典转化为类似元祖的方式"></a>1、items 字典转化为类似元祖的方式</h3><h3 id="2、keys-将字典所有key组合成一个序列"><a href="#2、keys-将字典所有key组合成一个序列" class="headerlink" title="2、keys    将字典所有key组合成一个序列"></a>2、keys    将字典所有key组合成一个序列</h3><h3 id="3、values-将字典所有value组合成一个序列"><a href="#3、values-将字典所有value组合成一个序列" class="headerlink" title="3、values  将字典所有value组合成一个序列**"></a>3、values  将字典所有value组合成一个序列**</h3><h3 id="4、复制-copy"><a href="#4、复制-copy" class="headerlink" title="4、复制 copy"></a><strong>4、复制 copy</strong></h3><p>copy是浅拷贝，当二级字典发生变化是，拷贝的也会改变</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#复制copy</span></span><br><span class="line">dict1 = &#123;<span class="string">"1"</span>:&#123;<span class="string">"a"</span>:<span class="number">2</span>,<span class="string">"b"</span>:<span class="number">3</span>,<span class="string">"c"</span>:<span class="number">4</span>&#125;&#125;</span><br><span class="line"><span class="comment">#复制copy</span></span><br><span class="line">dict2 = dict1.copy()</span><br><span class="line">print(dict2)</span><br><span class="line">dict1[<span class="string">"1"</span>][<span class="string">"d"</span>] = <span class="number">1</span> <span class="comment">#字典添加</span></span><br><span class="line">print(dict2)        <span class="comment">#在二级字典里的会随之改变</span></span><br><span class="line">print(dict1)</span><br></pre></td></tr></table></figure>
+<h3 id="5、get-根据key，返回value"><a href="#5、get-根据key，返回value" class="headerlink" title="5、get 根据key，返回value"></a><strong>5、get 根据key，返回value</strong></h3><p>好处是没有的key，不会报错，而是返回none</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#get 根据key，获取value</span></span><br><span class="line">dict1 = &#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="comment">#res = dict1[1] #如果这里搜索没有的key，报错导致程序结束</span></span><br><span class="line">res = dict1.get(<span class="string">"ab"</span>)</span><br><span class="line">print(res) <span class="comment">#则返回none</span></span><br></pre></td></tr></table></figure>
+<h3 id="6、pop-移除指定元素，返回键对应值，popitem-删除最后一个，字典为空，则报错"><a href="#6、pop-移除指定元素，返回键对应值，popitem-删除最后一个，字典为空，则报错" class="headerlink" title="6、pop 移除指定元素，返回键对应值，popitem() 删除最后一个，字典为空，则报错"></a><strong>6、pop 移除指定元素，返回键对应值，popitem() 删除最后一个，字典为空，则报错</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pop 移除指定元素，返回键对应值</span></span><br><span class="line">res = dict1.pop(<span class="string">"a"</span>,<span class="string">"key is no in here"</span>)<span class="comment">#加上默认值则可以不用报错</span></span><br><span class="line">print(res)</span><br><span class="line">print(dict1)</span><br><span class="line"><span class="comment">#popitem() 删除最后一个，字典为空，则报错</span></span><br><span class="line">dict1 = &#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>,<span class="string">"c"</span>:<span class="number">3</span>&#125;</span><br><span class="line">res = dict1.popitem()</span><br><span class="line">print(res)</span><br><span class="line">print(dict1)</span><br></pre></td></tr></table></figure>
+<h3 id="7、setdefault-添加一个键，如果存在则不进行操作"><a href="#7、setdefault-添加一个键，如果存在则不进行操作" class="headerlink" title="7、setdefault 添加一个键，如果存在则不进行操作"></a><strong>7、setdefault 添加一个键，如果存在则不进行操作</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#setdefault 添加一个键，如果存在则不进行操作</span></span><br><span class="line">dict1.setdefault(<span class="string">"cc"</span>,<span class="number">7</span>)</span><br><span class="line">print(dict1)</span><br></pre></td></tr></table></figure>
+<h3 id="8、update-没有的键值会添加，已有的会进行更新"><a href="#8、update-没有的键值会添加，已有的会进行更新" class="headerlink" title="8、update 没有的键值会添加，已有的会进行更新"></a><strong>8、update 没有的键值会添加，已有的会进行更新</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#update</span></span><br><span class="line">dict1.update(&#123;<span class="string">"jj"</span>:<span class="string">"hh"</span>&#125;)</span><br><span class="line">print(dict1)</span><br><span class="line">dict2 = &#123;<span class="string">"d"</span>:<span class="number">5</span>,<span class="string">"e"</span>:<span class="number">5</span>,<span class="string">"ff"</span>:<span class="number">7</span>&#125;</span><br><span class="line">dict1.update(dict2)</span><br><span class="line">print(dict1)    <span class="comment">#没有的键值会添加，已有的会进行更新</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、文件操作"><a href="#五、文件操作" class="headerlink" title="五、文件操作"></a>五、文件操作</h2><p>open(file_path,mode)<br>mode 权限：</p>
+<h3 id="w-write-写，如果没有这个人间会自动创建一个）"><a href="#w-write-写，如果没有这个人间会自动创建一个）" class="headerlink" title="w(write 写，如果没有这个人间会自动创建一个）"></a><strong>w(write 写，如果没有这个人间会自动创建一个）</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"w"</span>)</span><br><span class="line">f.write(<span class="string">"www.python.com"</span>)</span><br><span class="line">f.close()       <span class="comment">#写完之后记得关闭</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="r-read-读：read读取全部、readline读取一行、readlines以行为单位全部读取"><a href="#r-read-读：read读取全部、readline读取一行、readlines以行为单位全部读取" class="headerlink" title="r(read 读：read读取全部、readline读取一行、readlines以行为单位全部读取"></a><strong>r(read 读：read读取全部、readline读取一行、readlines以行为单位全部读取</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"r"</span>)</span><br><span class="line"><span class="comment">#content = f.read()</span></span><br><span class="line"><span class="comment">#content = f.readline()</span></span><br><span class="line">content = f.readlines() <span class="comment">#最常用，以行为单位全部读取</span></span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<h3 id="a-append-追加，如果没有这个文件则创建一个，如果有则在文件末尾追加"><a href="#a-append-追加，如果没有这个文件则创建一个，如果有则在文件末尾追加" class="headerlink" title="a(append 追加，如果没有这个文件则创建一个，如果有则在文件末尾追加)"></a>a(append 追加，如果没有这个文件则创建一个，如果有则在文件末尾追加)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"a"</span>)</span><br><span class="line">f.write(<span class="string">"hello"</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<h3 id="w-读写权限-会覆盖之前内容（先清空再覆盖"><a href="#w-读写权限-会覆盖之前内容（先清空再覆盖" class="headerlink" title="w+ 读写权限 会覆盖之前内容（先清空再覆盖"></a>w+ 读写权限 会覆盖之前内容（先清空再覆盖</h3><h3 id="r-读写-（不会先清空再覆盖，即没有创建新文件的权限"><a href="#r-读写-（不会先清空再覆盖，即没有创建新文件的权限" class="headerlink" title="r+ 读写  （不会先清空再覆盖，即没有创建新文件的权限"></a>r+ 读写  （不会先清空再覆盖，即没有创建新文件的权限</h3><h3 id="a-读写-（不会清除文件，而是在文件尾部追加）"><a href="#a-读写-（不会清除文件，而是在文件尾部追加）" class="headerlink" title="a+ 读写 （不会清除文件，而是在文件尾部追加）"></a>a+ 读写 （不会清除文件，而是在文件尾部追加）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"w+"</span>)</span><br><span class="line">f.write(<span class="string">"hello world"</span>)</span><br><span class="line">f.seek(<span class="number">0</span>,<span class="number">0</span>)  <span class="comment">#写操作之后光标会在最末端，导致读取从最末端开始，seek移动光标</span></span><br><span class="line">content = f.read()</span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"r+"</span>)</span><br><span class="line">f.write(<span class="string">"world"</span>)</span><br><span class="line">f.seek(<span class="number">0</span>,<span class="number">0</span>)  <span class="comment">#写操作之后光标会在最末端，导致读取从最末端开始，seek移动光标</span></span><br><span class="line">content = f.read()</span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"a+"</span>)</span><br><span class="line">f.write(<span class="string">"world"</span>)</span><br><span class="line">f.seek(<span class="number">0</span>,<span class="number">0</span>)  <span class="comment">#写操作之后光标会在最末端，导致读取从最末端开始，seek移动光标</span></span><br><span class="line">content = f.read()</span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出结果为</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">world world</span></span><br><span class="line"><span class="string">world worldworld</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h3 id="wb-二进制写"><a href="#wb-二进制写" class="headerlink" title="wb 二进制写"></a>wb 二进制写</h3><h3 id="rb-二进制读"><a href="#rb-二进制读" class="headerlink" title="rb 二进制读"></a>rb 二进制读</h3><h3 id="ab-二进制追加写"><a href="#ab-二进制追加写" class="headerlink" title="ab 二进制追加写"></a>ab 二进制追加写</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#二进制模式一般在计算机交互时使用</span></span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"wb"</span>)</span><br><span class="line">f.write(<span class="string">"我好好学习"</span>.encode(<span class="string">"utf-8"</span>))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"rb"</span>)</span><br><span class="line">content = f.read().decode(<span class="string">"utf-8"</span>)</span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过使用errors参数可以不报错，但是会是乱码</span></span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>)<span class="comment"># binary mode doesn't take an encoding argument</span></span><br><span class="line">f.write(<span class="string">"我好好学习"</span>)</span><br><span class="line">f.close()</span><br><span class="line">f = open(<span class="string">"user.txt"</span>,<span class="string">"r"</span>,encoding=<span class="string">"gbk"</span>,errors=<span class="string">"ignore"</span>)</span><br><span class="line">content = f.read()</span><br><span class="line">print(content)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h3 id="为什么要close"><a href="#为什么要close" class="headerlink" title="为什么要close"></a><strong>为什么要close</strong></h3><p>在write的时候，是写到缓冲区中，而不是直接写进文件，<br>并且，文件不去close会导致文件没有保存，既没有生成</p>
+<p>刷新缓冲区的方式：（即把缓冲区的内容写入文件中）<br>    1、缓冲区呗占满了<br>    2、关闭文件时自动刷新<br>    3、程序运行结束<br>    4、手动刷新缓冲区 flush（）</p>
+<h3 id="with语法，不用手动关闭文件，执行结束，自动关闭文件"><a href="#with语法，不用手动关闭文件，执行结束，自动关闭文件" class="headerlink" title="with语法，不用手动关闭文件，执行结束，自动关闭文件"></a><strong>with语法，不用手动关闭文件，执行结束，自动关闭文件</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#with语法，不用手动关闭文件，执行结束，自动关闭文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"user.txt"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"这是一个测试"</span>)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"user.txt"</span>,<span class="string">"r"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    content = f.read()</span><br><span class="line">    print(content)</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、pickle模块"><a href="#六、pickle模块" class="headerlink" title="六、pickle模块"></a>六、pickle模块</h2><p>使用前需要导入 import pickle<br>四个函数：<br>dump    （文件用）<br>load<br>dumps        （列表等使用）<br>loads<br>通过使用pickle模块可以方便二进制的数据传输解码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle <span class="comment">#是一个模块需要导入</span></span><br><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">res = pickle.dumps(L)<span class="comment">#当网络发送时，转换成二进制发送</span></span><br><span class="line">print(res)</span><br><span class="line">con = pickle.loads(res)</span><br><span class="line">print(con)  <span class="comment">#接收时解码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#dump是用于文件操作的</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"user.txt"</span>,<span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    str = <span class="string">"这是一个测试"</span></span><br><span class="line">    pickle.dump(str,f)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"user.txt"</span>,<span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    res = pickle.load(f)</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/04/03/day13%EF%BC%9Aos%E6%A8%A1%E5%9D%97%E3%80%81os-path%E6%96%B9%E6%B3%95%E3%80%81%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/">day13：os模块、os.path方法、递归函数</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/04/03/day-11%EF%BC%9A%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E4%B8%8E%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">day 11：列表推导式与深浅拷贝</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://jj1m8.github.io">LSJ</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://jj1m8.github.io/2020/04/03/day12%EF%BC%9A%E5%85%83%E7%A5%96%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E3%80%81pickle%E6%A8%A1%E5%9D%97/">http://jj1m8.github.io/2020/04/03/day12%EF%BC%9A%E5%85%83%E7%A5%96%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E6%93%8D%E4%BD%9C%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E3%80%81pickle%E6%A8%A1%E5%9D%97/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://jj1m8.github.io">LSJ</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="http://jj1m8.github.io">LSJ</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 
