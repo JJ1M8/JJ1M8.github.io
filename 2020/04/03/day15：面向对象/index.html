@@ -1,207 +1,23 @@
+extends includes/layout.pug
 
-<!DOCTYPE html>
-<html lang="en" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>day15：面向对象 - JJ1M8</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="我是僵尸，我要当一个厉害的人,一、面向对象面向对象，更加注重过程的编程方法面向对象三大特性：封装，继承，多态py中所有的类都继承与一个父类
-
-1、使用class建立类123#class 类class Person:   pass,"> 
-    <meta name="author" content="LSJ"> 
-    <link rel="alternative" href="atom.xml" title="JJ1M8" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-    
-<link rel="stylesheet" href="/css/diaspora.css">
-
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8691406134231910",
-              enable_page_level_ads: true
-         });
-    </script>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body class="loading">
-    <span id="config-title" style="display:none">JJ1M8</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://jj1m8.github.io"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">day15：面向对象</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
-    </div>
-    <div class="scrollbar"></div>
-</div>
-
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">day15：面向对象</h1>
-        <div class="stuff">
-            <span>四月 03, 2020</span>
-            
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-
-        </div>
-        <div class="content markdown">
-            <h2 id="一、面向对象"><a href="#一、面向对象" class="headerlink" title="一、面向对象"></a>一、面向对象</h2><p>面向对象，更加注重过程的编程方法<br>面向对象三大特性：封装，继承，多态<br>py中所有的类都继承与一个父类</p>
-<a id="more"></a>
-<h3 id="1、使用class建立类"><a href="#1、使用class建立类" class="headerlink" title="1、使用class建立类"></a>1、使用class建立类</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#class 类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">   <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p>给类加入属性：<br>    #属性<br>    name = “js”<br>    age = 18<br>    hair = “black”<br>给类加入方法：<br>   def tell(self)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#class 类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="comment">#属性</span></span><br><span class="line">    name = <span class="string">"js"</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line">    hair = <span class="string">"black"</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#方法 self：谁调用就是谁</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"my name is %s,age %s,hair is %s"</span>%(self.name,self.age,self.hair))</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、实例化对象"><a href="#2、实例化对象" class="headerlink" title="2、实例化对象"></a>2、实例化对象</h3><p>使用 类名() 表示实例化一个对象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = Person()</span><br><span class="line">print(p.name)</span><br><span class="line">p.tell()</span><br></pre></td></tr></table></figure>
-<h3 id="3、使用构造方法"><a href="#3、使用构造方法" class="headerlink" title="3、使用构造方法"></a>3、使用构造方法</h3><p>构造方法能够在实例化时就初始化实例</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#class 类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="comment">#属性</span></span><br><span class="line">    name = <span class="string">"js"</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line">    hair = <span class="string">"black"</span></span><br><span class="line">    <span class="comment">#构造方法：在实例化的时候自动调用</span></span><br><span class="line">    <span class="comment">#如果定义了构造器则没有默认的缺省的构造器了</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    <span class="comment">#方法 self：谁调用就是谁</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"my name is %s,age %s,hair is %s"</span>%(self.name,self.age,self.hair))</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#类名() 表示实例化一个对象</span></span><br><span class="line">p = Person(<span class="string">"js"</span>,<span class="number">18</span>)</span><br><span class="line">p.tell()</span><br><span class="line">p1 = Person(<span class="string">"LY"</span>,<span class="number">14</span>)</span><br><span class="line">p1.tell()</span><br></pre></td></tr></table></figure>
-<h3 id="4、访问原来的属性"><a href="#4、访问原来的属性" class="headerlink" title="4、访问原来的属性"></a>4、访问原来的属性</h3><p>可以通过Person.来进行访问</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#访问原来属性：</span></span><br><span class="line">print(Person.name)</span><br><span class="line">print(Person.age)</span><br><span class="line">Person.tell(p1) <span class="comment">#self可以传入实例</span></span><br></pre></td></tr></table></figure>
-<p>注意：<br>可以看出，类中与实例中属性不同。<br>当调用传入参数中没有的属性时，对调用类属性</p>
-<h3 id="5、析构函数"><a href="#5、析构函数" class="headerlink" title="5、析构函数"></a>5、析构函数</h3><p>当实例被回收时自动调用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    <span class="comment">#析构函数，当实例被回收时自动调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"析构函数调用"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"mtname is %s,age %s"</span>%(self.name,self.age))</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">"sj"</span>,<span class="number">18</span>)</span><br><span class="line">p.tell()</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">当程序结束时，析构函数就会调用</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6、使用私有属性、私有方法"><a href="#6、使用私有属性、私有方法" class="headerlink" title="6、使用私有属性、私有方法"></a>6、使用私有属性、私有方法</h3><p>通过__ 就可以设置私有属性和私有方法：例如<br>__name<br>def __setName(self,name):</p>
-<p>设置了私有之后，只能通过公有来调用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line">        <span class="comment">#加两个下划线表示私有属性，不能直接被外部访问</span></span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__age = age</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getAge</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  self.__age</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setAge</span><span class="params">(self,age)</span>:</span></span><br><span class="line">        self.__age = age</span><br><span class="line">    <span class="comment">#可以设置私有方法，同理，只能通过公用方法调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setName</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setNamePass</span><span class="params">(self)</span>:</span></span><br><span class="line">        pwd = <span class="number">123</span></span><br><span class="line">        res = int(input(<span class="string">"请输入密码："</span>))</span><br><span class="line">        <span class="keyword">if</span> res == pwd:</span><br><span class="line">            self.__setName(<span class="string">"haha修改成功"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"pass word error"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"mtname is %s,age %s"</span>%(self.__name,self.__age))</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">"sj"</span>,<span class="number">18</span>)</span><br><span class="line">p.tell()</span><br><span class="line">print(p.getAge())</span><br><span class="line">p.setAge(<span class="number">10</span>)</span><br><span class="line">p.tell() <span class="comment">#可以看出修改成功</span></span><br><span class="line"></span><br><span class="line">p.setNamePass()</span><br><span class="line">p.tell()</span><br></pre></td></tr></table></figure>
-
-<h3 id="7、继承、重写、拓展"><a href="#7、继承、重写、拓展" class="headerlink" title="7、继承、重写、拓展"></a>7、继承、重写、拓展</h3><p>继承，括号内填写父类,这样就能够拥有父类的方法属性，减少重复工作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#继承，括号内填写父类,如</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MtList</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p>在继承中，经常引用其他文件中的类<br>通过 if <strong>name</strong> == ‘<strong>main</strong>‘ 可以只导入功能，在继承时十分常用</p>
-<p>一个小练习如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> day15.面向对象 <span class="keyword">import</span> Person</span><br><span class="line"><span class="comment">#通过 if __name__ == '__main__' 可以只导入功能，</span></span><br><span class="line">p = Person(<span class="string">"LS"</span>,<span class="number">18</span>)</span><br><span class="line">p.tell()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Basterd</span><span class="params">(Person)</span>:</span></span><br><span class="line">    <span class="comment">#方法拓展，在保留父类方法时拓展</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age,badhobby)</span>:</span></span><br><span class="line">        super().__init__(name,age)</span><br><span class="line">        self.badhobby = badhobby</span><br><span class="line">    <span class="comment">#方法重写，完全覆盖父类方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"我叫%s，age %s，我爱%s"</span>%(self.name,self.age,self.badhobby))</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">建立一个坏弹类，</span></span><br><span class="line"><span class="string">坏蛋是一个人，</span></span><br><span class="line"><span class="string">坏蛋有他特殊的属性与发方法</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Basterd(<span class="string">"ly"</span>,<span class="number">18</span>,<span class="string">"打架"</span>)</span><br><span class="line">    p.tell()</span><br></pre></td></tr></table></figure>
-<p>其中，<strong>init</strong>()用到了拓展，<br>tell()则是直接覆盖了</p>
-<h3 id="8、小练习"><a href="#8、小练习" class="headerlink" title="8、小练习"></a>8、小练习</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clip</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,bullet)</span>:</span></span><br><span class="line">        self.bullet = bullet</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gun</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,clip)</span>:</span></span><br><span class="line">        self.clip = clip</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fier</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.clip.bullet &gt; n:</span><br><span class="line">            self.clip.bullet -= n</span><br><span class="line">            print(<span class="string">"开枪；还剩%s发子弹"</span>%(self.clip.bullet))</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">                print(<span class="string">"tu~"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"子弹不够啦，上子弹啊！"</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,gun)</span>:</span></span><br><span class="line">        self.gun = gun</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fill</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        self.gun.clip.bullet += n</span><br><span class="line">        print(<span class="string">"上弹成功，还有%s发"</span>%(self.gun.clip.bullet))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> day15.clip <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> day15.gun <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> day15.Person <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">c = Clip(<span class="number">10</span>)</span><br><span class="line">g = Gun(c)</span><br><span class="line">p = Person(g)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    p.gun.fier(<span class="number">3</span>)</span><br><span class="line">p.fill(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    p.gun.fier(<span class="number">3</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">运行效果</span></span><br><span class="line"><span class="string">开枪；还剩7发子弹</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">开枪；还剩4发子弹</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">tu~</span></span><br><span class="line"><span class="string">开枪；还剩1发子弹</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                        
-                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                </ul>
-            
-        </div>
-        
-    <div id='gitalk-container' class="comment link"
-		data-enable='false'
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d='false'
-    >查看评论</div>
-
-
-    </div>
-    
-</div>
-
-
-    </div>
-</div>
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-</html>
+block content
+  article#post.article-entry
+    != page.content
+  // lincense
+  if(theme.copyright.enable === true && page.copyright !== false)
+    .license-wrapper
+      p 
+        span Author:  
+        a(href=config.url)= config.author
+      p 
+        span Link:  
+        a(href=page.permalink)= page.permalink
+      p 
+        span Copyright:  
+        span!= theme.copyright.license
+  include includes/partial/post-nav.pug
+  #comment
+    include includes/comment/livere.pug
+    include includes/comment/disqus.pug
+    include includes/comment/changyan.pug
+    include includes/comment/gitment.pug

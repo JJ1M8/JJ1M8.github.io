@@ -1,211 +1,23 @@
+extends includes/layout.pug
 
-<!DOCTYPE html>
-<html lang="en" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>day13：os模块、os.path方法、递归函数 - JJ1M8</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="我是僵尸，我要当一个厉害的人,一、os模块os是系统自带的模块通过os.来进行使用
-1、os.name查询系统名
-12res = os.nameprint(res)
-2、os.system调用系统命令12os.system(&#34;i,"> 
-    <meta name="author" content="LSJ"> 
-    <link rel="alternative" href="atom.xml" title="JJ1M8" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-    
-<link rel="stylesheet" href="/css/diaspora.css">
-
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8691406134231910",
-              enable_page_level_ads: true
-         });
-    </script>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body class="loading">
-    <span id="config-title" style="display:none">JJ1M8</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://jj1m8.github.io"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">day13：os模块、os.path方法、递归函数</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
-    </div>
-    <div class="scrollbar"></div>
-</div>
-
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">day13：os模块、os.path方法、递归函数</h1>
-        <div class="stuff">
-            <span>四月 03, 2020</span>
-            
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-
-        </div>
-        <div class="content markdown">
-            <h2 id="一、os模块"><a href="#一、os模块" class="headerlink" title="一、os模块"></a>一、os模块</h2><p>os是系统自带的模块<br><strong>通过os.来进行使用</strong></p>
-<h3 id="1、os-name查询系统名"><a href="#1、os-name查询系统名" class="headerlink" title="1、os.name查询系统名"></a>1、os.name查询系统名</h3><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.name</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="2、os-system调用系统命令"><a href="#2、os-system调用系统命令" class="headerlink" title="2、os.system调用系统命令"></a>2、os.system调用系统命令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.system(<span class="string">"ipconfig"</span>) <span class="comment">#使用在cmd中可以使用的命令都可以用</span></span><br><span class="line">os.system(<span class="string">"notepad"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="3、os-getcwd-返回当前工作路径"><a href="#3、os-getcwd-返回当前工作路径" class="headerlink" title="3、os.getcwd()返回当前工作路径"></a>3、os.getcwd()返回当前工作路径</h3><p>绝对路径：从盘服开始的<br>相对路径：相对于当前工作路径写出的路径 ../上一级目录</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.getcwd()</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="4、os-listdir（）-返回指定目录下的所有文件与文件夹"><a href="#4、os-listdir（）-返回指定目录下的所有文件与文件夹" class="headerlink" title="4、os.listdir（） 返回指定目录下的所有文件与文件夹"></a>4、os.listdir（） 返回指定目录下的所有文件与文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res = os.listdir(<span class="string">"G:\project\pyProject\day13"</span>)</span><br><span class="line">print(res)</span><br><span class="line">res = os.listdir() <span class="comment">#"../" 则返回上一级目录</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="5、os-remove-删除指定文件"><a href="#5、os-remove-删除指定文件" class="headerlink" title="5、os.remove 删除指定文件"></a>5、os.remove 删除指定文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.remove(<span class="string">"../txt"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="6、os-mkdir-创建目录-os-makedirs-创建多级目录"><a href="#6、os-mkdir-创建目录-os-makedirs-创建多级目录" class="headerlink" title="6、os.mkdir 创建目录 os.makedirs 创建多级目录"></a>6、os.mkdir 创建目录 os.makedirs 创建多级目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.mkdir(<span class="string">"../day14"</span>)</span><br><span class="line">os.makedirs(<span class="string">"../day14/day15/day16"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="7、os-rmdir-删除指定目录"><a href="#7、os-rmdir-删除指定目录" class="headerlink" title="7、os.rmdir 删除指定目录"></a>7、os.rmdir 删除指定目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(<span class="string">"../day14/day15/day16"</span>) <span class="comment">#删除了day16</span></span><br></pre></td></tr></table></figure>
-<h3 id="8、os-removedirs-删除路劲中所有空文件"><a href="#8、os-removedirs-删除路劲中所有空文件" class="headerlink" title="8、os.removedirs 删除路劲中所有空文件"></a>8、os.removedirs 删除路劲中所有空文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">os.removedirs(<span class="string">"../day14/day15"</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">如果文件夹中有文件不为空，则删除不掉，使用os不行</span></span><br><span class="line"><span class="string">使用shutil可以，shutil.rmtree("../day14")可以直接删除day14及其内部的东西</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<h3 id="9、os-chdir-更换工作路径"><a href="#9、os-chdir-更换工作路径" class="headerlink" title="9、os.chdir 更换工作路径"></a>9、os.chdir 更换工作路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(<span class="string">"../day13"</span>)</span><br><span class="line">res = os.getcwd()</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="10、os-rename-更名-注意两个参数都是路径"><a href="#10、os-rename-更名-注意两个参数都是路径" class="headerlink" title="10、os.rename 更名,注意两个参数都是路径"></a>10、os.rename 更名,注意两个参数都是路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(<span class="string">"../day10/a.py"</span>,<span class="string">"../day10/b.py"</span>)<span class="comment">#如果不写路径就会改到其他文件夹去导致文件位置改变</span></span><br></pre></td></tr></table></figure>
-<h3 id="11、-os-walk-遍历目录下所有目录与文件"><a href="#11、-os-walk-遍历目录下所有目录与文件" class="headerlink" title="11、#os.walk 遍历目录下所有目录与文件"></a>11、#os.walk 遍历目录下所有目录与文件</h3><p>第一个参数：返回一个路径<br>第二个参数：这个路径下所有目录<br>第三个参数：这个路径下所有文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = os.walk(<span class="string">"../"</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> res: <span class="comment">#res是生成器</span></span><br><span class="line">    print(var)</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、os-path方法"><a href="#二、os-path方法" class="headerlink" title="二、os.path方法"></a>二、os.path方法</h2><h3 id="1、os-path-abspath将相对路径转化为绝对路径"><a href="#1、os-path-abspath将相对路径转化为绝对路径" class="headerlink" title="1、os.path.abspath将相对路径转化为绝对路径"></a>1、os.path.abspath将相对路径转化为绝对路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#os.path.abspath</span></span><br><span class="line"><span class="comment">#将相对路径转化为绝对路径</span></span><br><span class="line">res = os.path.abspath(<span class="string">"../day10/b.py"</span>)<span class="comment">#G:\project\pyProject\day10\b\py</span></span><br><span class="line">print(res)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">在window中，文件夹使用\来显示，这样可能是转义字符，要用“\\”</span></span><br><span class="line"><span class="string">最好写成//</span></span><br><span class="line"><span class="string">之后还会遇到这样转换操作 "".replace("\\","/")</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、os-path-split-分割目录和文件名"><a href="#2、os-path-split-分割目录和文件名" class="headerlink" title="2、os.path.split 分割目录和文件名"></a>2、os.path.split 分割目录和文件名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.split 分割目录和文件名</span></span><br><span class="line">res = os.path.split(<span class="string">"G:\project\pyProject\day10/b.py"</span>)</span><br><span class="line">print(res) <span class="comment">#('G:\\project\\pyProject\\day10', 'b.py')</span></span><br></pre></td></tr></table></figure>
-<h3 id="3、os-path-join-拼接目录和文件名"><a href="#3、os-path-join-拼接目录和文件名" class="headerlink" title="3、os.path.join 拼接目录和文件名"></a>3、os.path.join 拼接目录和文件名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.join 拼接目录和文件名</span></span><br><span class="line">res = os.path.join(<span class="string">"G:\\project\\pyProject\\day10"</span>,<span class="string">"b.py"</span>)</span><br><span class="line">print(res) <span class="comment">#G;\project\pyProject\day10\b.py</span></span><br></pre></td></tr></table></figure>
-<h3 id="4、os-path-exists-判断一个路径是否存在"><a href="#4、os-path-exists-判断一个路径是否存在" class="headerlink" title="4、os.path.exists 判断一个路径是否存在"></a>4、os.path.exists 判断一个路径是否存在</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.exists 判断一个路径是否存在</span></span><br><span class="line">res = os.path.exists(<span class="string">"G:\\project\\pyProject\\day10\\b.py"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="5、os-path-isfile-判断是否是一个文件"><a href="#5、os-path-isfile-判断是否是一个文件" class="headerlink" title="5、os.path.isfile 判断是否是一个文件"></a>5、os.path.isfile 判断是否是一个文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = os.path.isfile(<span class="string">"G:\project\pyProject\day10\\b.py"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="6、os-path-isdir-判断是否是一个目录"><a href="#6、os-path-isdir-判断是否是一个目录" class="headerlink" title="6、os.path.isdir 判断是否是一个目录"></a>6、os.path.isdir 判断是否是一个目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.isdir 判断是否是一个目录</span></span><br><span class="line">res = os.path.isdir(<span class="string">"G:/project/pyProject/day10"</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<h3 id="7、os-path-getsize-获取一个文件大小"><a href="#7、os-path-getsize-获取一个文件大小" class="headerlink" title="7、os.path.getsize 获取一个文件大小"></a>7、os.path.getsize 获取一个文件大小</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#os.path.getsize 获取一个文件大小</span></span><br><span class="line">res = os.path.getsize(<span class="string">"G:\project\pyProject\day10\optionOfDict.py"</span>)</span><br><span class="line">print(res) <span class="comment">#1663字节</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、递归函数"><a href="#三、递归函数" class="headerlink" title="三、递归函数"></a>三、递归函数</h2><p>递归，自身调用自身 最重要的是找到一个出口<br>好处：精简程序执行中的重复调用<br>例如：</p>
-<h3 id="求阶乘"><a href="#求阶乘" class="headerlink" title="求阶乘"></a>求阶乘</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#求阶层 5*4*3*2*1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> func(n<span class="number">-1</span>) * n</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">res = func(4)*5 -&gt; func(3)*4*5 -&gt; func(2)*3*4*5 -&gt; func(1)*2*3*4*5</span></span><br><span class="line"><span class="string">res = 1*2*3*4*5</span></span><br><span class="line"><span class="string">注意</span></span><br><span class="line"><span class="string">每调用一次函数就会增加一层栈帧 没计算一次就会少一层栈帧</span></span><br><span class="line"><span class="string">栈帧超过999就会报错</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">res = func(<span class="number">5</span>) <span class="comment">#999报错，超出了递归的最大范围</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<p>为了防止栈溢出报错，我们需要引用尾递归方法<br>遗憾的是python目前没有对尾递归进行优化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#尾递归</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> fact_iter(n,<span class="number">1</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact_iter</span><span class="params">(num,product)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> product</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fact_iter(num<span class="number">-1</span>,product*num)</span><br><span class="line"><span class="comment"># fact_iter(4,5)</span></span><br><span class="line"><span class="comment"># fact_iter(3,20)</span></span><br><span class="line"><span class="comment"># fact_iter(2.60)</span></span><br><span class="line"><span class="comment"># fact_iter(1,120)</span></span><br><span class="line"><span class="comment"># product = 120</span></span><br><span class="line">print(fact(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="计算斐波那契额数列"><a href="#计算斐波那契额数列" class="headerlink" title="计算斐波那契额数列"></a><strong>计算斐波那契额数列</strong></h3><p>1、1、2、3、5、8、13、21、34、、、n</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcFBNQ</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span> <span class="keyword">or</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span>  funcFBNQ(n<span class="number">-2</span>) + funcFBNQ(n<span class="number">-1</span>)</span><br><span class="line"><span class="comment">#这个数为前两个数加前一个数</span></span><br><span class="line">print(funcFBNQ(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="汉诺塔游戏"><a href="#汉诺塔游戏" class="headerlink" title="汉诺塔游戏"></a><strong>汉诺塔游戏</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcHNT</span><span class="params">(n,a,b,c)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        print(a,<span class="string">"--&gt;"</span>,c)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        funcHNT(n<span class="number">-1</span>,a,c,b)</span><br><span class="line">        print(a,<span class="string">"--&gt;"</span>,c)</span><br><span class="line">        funcHNT(n<span class="number">-1</span>,b,a,c)</span><br><span class="line">funcHNT(<span class="number">3</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、超市小练习"><a href="#四、超市小练习" class="headerlink" title="四、超市小练习"></a>四、超市小练习</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-"</span></span><br><span class="line">shop_list = [[<span class="string">"健力宝"</span>,<span class="number">5.6</span>],[<span class="string">"加多宝"</span>,<span class="number">10</span>],[<span class="string">"QQ星"</span>,<span class="number">50</span>],[<span class="string">"动脉"</span>,<span class="number">100</span>]]</span><br><span class="line">buy_list = []</span><br><span class="line">prise = <span class="number">0</span></span><br><span class="line">print(<span class="string">"====================宝昌面包====================="</span>)</span><br><span class="line"><span class="keyword">for</span> num,shop <span class="keyword">in</span> enumerate(shop_list):</span><br><span class="line">    print(num,shop[<span class="number">0</span>],shop[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">"按0退出系统"</span>)</span><br><span class="line">print(<span class="string">"================================================="</span>)</span><br><span class="line"></span><br><span class="line">salary = int(input(<span class="string">"请输入你有多少salary："</span>))</span><br><span class="line"><span class="keyword">if</span> salary &gt; <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        buyNum = int(input(<span class="string">"请输入你要买的商品："</span>))</span><br><span class="line">        <span class="keyword">if</span> buyNum == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> salary &gt;= shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]:</span><br><span class="line">            print(<span class="string">"购买成功"</span>)</span><br><span class="line">            salary -= shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">            prise += shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">            buy_list.append(shop_list[buyNum<span class="number">-1</span>][<span class="number">0</span>])</span><br><span class="line">            print(<span class="string">"感谢购买，消费%s，余额%s"</span> %(shop_list[buyNum<span class="number">-1</span>][<span class="number">1</span>],salary))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"无法购买，穷逼"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"清先充钱"</span>)</span><br><span class="line">print(<span class="string">"购买清单为："</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> buy_list:</span><br><span class="line">    print(var)</span><br><span class="line">print(<span class="string">"感谢使用"</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="路径中有中文报错时，在文件头加上即可-coding-utf-8"><a href="#路径中有中文报错时，在文件头加上即可-coding-utf-8" class="headerlink" title="路径中有中文报错时，在文件头加上即可 #-- coding: utf-8 --"></a><strong>路径中有中文报错时，在文件头加上即可 #-<em>- coding: utf-8 -</em>-</strong></h3>
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                        
-                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                </ul>
-            
-        </div>
-        
-    <div id='gitalk-container' class="comment link"
-		data-enable='false'
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d='false'
-    >查看评论</div>
-
-
-    </div>
-    
-</div>
-
-
-    </div>
-</div>
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-</html>
+block content
+  article#post.article-entry
+    != page.content
+  // lincense
+  if(theme.copyright.enable === true && page.copyright !== false)
+    .license-wrapper
+      p 
+        span Author:  
+        a(href=config.url)= config.author
+      p 
+        span Link:  
+        a(href=page.permalink)= page.permalink
+      p 
+        span Copyright:  
+        span!= theme.copyright.license
+  include includes/partial/post-nav.pug
+  #comment
+    include includes/comment/livere.pug
+    include includes/comment/disqus.pug
+    include includes/comment/changyan.pug
+    include includes/comment/gitment.pug
