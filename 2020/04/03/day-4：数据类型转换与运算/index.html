@@ -27,6 +27,11 @@
   <body>
     <canvas id='pagemap'></canvas>
     
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、向集合转换"><span class="toc-text">一、向集合转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、向字典转换"><span class="toc-text">二、向字典转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数值运算"><span class="toc-text">三、数值运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、逻辑运算"><span class="toc-text">四、逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、赋值运算"><span class="toc-text">五、赋值运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、逻辑运算"><span class="toc-text">六、逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、成员运算"><span class="toc-text">七、成员运算</span></a></li></ol>
+    </div>
+    
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
       <span class="icon-toc menu-reset">Toc</span>
@@ -188,26 +193,21 @@
       <div>
       </div>
     </div>
-    <p>##一、向集合转换</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var=<span class="hljs-number">1</span>               <span class="hljs-comment">#整型，浮点型，复数，bool</span><br>val = set(var)<br>print(val,type(val)) <span class="hljs-comment">#报错！所有数值类型不能转化成集合</span><br><br>var = <span class="hljs-string">"hello"</span>     <br>val = set(var)<br>print(val,type(val))<br></code></pre></td></tr></table></figure>
+    <h2 id="一、向集合转换"><a href="#一、向集合转换" class="headerlink" title="一、向集合转换"></a>一、向集合转换</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var=<span class="hljs-number">1</span>               <span class="hljs-comment">#整型，浮点型，复数，bool</span><br>val = set(var)<br>print(val,type(val)) <span class="hljs-comment">#报错！所有数值类型不能转化成集合</span><br><br>var = <span class="hljs-string">"hello"</span>     <br>val = set(var)<br>print(val,type(val))<br></code></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>总结：<br>所有数值类型不能转化成集合<br>所有容器类型都可以<br>字典只能转化键<br>##二、向字典转换</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var = <span class="hljs-string">""</span><br>val = dict(var)<br>print(val, type(val))<br><br>var = [[<span class="hljs-number">1</span>,<span class="hljs-string">"hello"</span>],[<span class="hljs-number">2</span>,<span class="hljs-string">"word"</span>]]<br>val = dict(var)<br>print(val, type(val))<br></code></pre></td></tr></table></figure>
+<p>总结：<br>所有数值类型不能转化成集合<br>所有容器类型都可以<br>字典只能转化键</p>
+<h2 id="二、向字典转换"><a href="#二、向字典转换" class="headerlink" title="二、向字典转换"></a>二、向字典转换</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var = <span class="hljs-string">""</span><br>val = dict(var)<br>print(val, type(val))<br><br>var = [[<span class="hljs-number">1</span>,<span class="hljs-string">"hello"</span>],[<span class="hljs-number">2</span>,<span class="hljs-string">"word"</span>]]<br>val = dict(var)<br>print(val, type(val))<br></code></pre></td></tr></table></figure>
 <p>总结：<br>所有字符类型不能转换<br>容器类型只要是空都可以<br>列表中[[1,”hello”],[2,”word”]]，嵌套二级列表，有且只有两个元素才可以</p>
-<p>##三、数值运算</p>
-<p>//  取整（取结果，去掉余数的意思）<br>**  幂运算</p>
+<h2 id="三、数值运算"><a href="#三、数值运算" class="headerlink" title="三、数值运算"></a>三、数值运算</h2><p>//  取整（取结果，去掉余数的意思）<br>**  幂运算</p>
 <p>7/5  版本2中是1，版本3中是1.4</p>
 <p>（其余运算类似c）</p>
-<p>##四、逻辑运算</p>
-<p>两个相等是全等于，必须数值相同 为True</p>
+<h2 id="四、逻辑运算"><a href="#四、逻辑运算" class="headerlink" title="四、逻辑运算"></a>四、逻辑运算</h2><p>两个相等是全等于，必须数值相同 为True</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">a=<span class="hljs-number">1.0</span><br>b=<span class="hljs-number">1</span><br>print(a==b) <span class="hljs-comment">#结果为True</span><br></code></pre></td></tr></table></figure>
 
-<p>（其余运算类似c）<br>##五、赋值运算</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">a**=<span class="hljs-number">3</span>  等于 a=a**<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-<p>##六、逻辑运算</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">and</span>、<span class="hljs-keyword">or</span>、<span class="hljs-keyword">not</span>、xor（^）<br></code></pre></td></tr></table></figure>
-<p>##七、成员运算</p>
-<p>在容器中in、不在容器中not in</p>
+<p>（其余运算类似c）</p>
+<h2 id="五、赋值运算"><a href="#五、赋值运算" class="headerlink" title="五、赋值运算"></a>五、赋值运算</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">a**=<span class="hljs-number">3</span>  等于 a=a**<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<h2 id="六、逻辑运算"><a href="#六、逻辑运算" class="headerlink" title="六、逻辑运算"></a>六、逻辑运算</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">and</span>、<span class="hljs-keyword">or</span>、<span class="hljs-keyword">not</span>、xor（^）<br></code></pre></td></tr></table></figure>
+<h2 id="七、成员运算"><a href="#七、成员运算" class="headerlink" title="七、成员运算"></a>七、成员运算</h2><p>在容器中in、不在容器中not in</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br>print(<span class="hljs-number">6</span> <span class="hljs-keyword">in</span> var)<br></code></pre></td></tr></table></figure>
 
   

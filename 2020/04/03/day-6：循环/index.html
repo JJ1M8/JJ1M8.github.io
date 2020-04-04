@@ -27,6 +27,11 @@
   <body>
     <canvas id='pagemap'></canvas>
     
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、while循环"><span class="toc-text">一、while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用while打印乘法表"><span class="toc-text">二、使用while打印乘法表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、使用for循环"><span class="toc-text">三、使用for循环</span></a></li></ol>
+    </div>
+    
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
       <span class="icon-toc menu-reset">Toc</span>
@@ -188,15 +193,13 @@
       <div>
       </div>
     </div>
-    <p>##一、while循环</p>
-<p>while True：死循环，只能使用break</p>
+    <h2 id="一、while循环"><a href="#一、while循环" class="headerlink" title="一、while循环"></a>一、while循环</h2><p>while True：死循环，只能使用break</p>
 <p>break：  退出当前循环</p>
 <p>continue：继续下一轮循环</p>
 <p>pass  在循环体或者函数体空时防止报错</p>
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random <span class="hljs-comment">#引入随机数</span><br><br>luck_num = random.randint(<span class="hljs-number">10</span>,<span class="hljs-number">99</span>)<br>luck_num_g = luck_num % <span class="hljs-number">10</span><br>luck_num_s = luck_num //<span class="hljs-number">10</span><br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    buy_num = int(input(<span class="hljs-string">"请输入一个两位数："</span>))<br>    <span class="hljs-keyword">if</span> buy_num == luck_num:<br>        print(<span class="hljs-string">"一等奖"</span>)<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">elif</span> buy_num % <span class="hljs-number">10</span> == luck_num_s <span class="hljs-keyword">and</span> buy_num //<span class="hljs-number">10</span> == luck_num_g:<br>        print(<span class="hljs-string">"二等奖"</span>)<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">else</span>:<br>        print(<span class="hljs-string">"遗憾,没中奖"</span>)<br></code></pre></td></tr></table></figure>
-<p>##二、使用while打印乘法表</p>
-<p> 正三角</p>
+<h2 id="二、使用while打印乘法表"><a href="#二、使用while打印乘法表" class="headerlink" title="二、使用while打印乘法表"></a>二、使用while打印乘法表</h2><p> 正三角</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">i = <span class="hljs-number">1</span><br><span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">10</span>:<br>    j = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> j &lt;= i:<br>        print(j,<span class="hljs-string">"x"</span>,i,<span class="hljs-string">"="</span>,i*j,end=<span class="hljs-string">" "</span>)<br>        j += <span class="hljs-number">1</span><br>    print()<br>    i += <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 <p>倒三角</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">i = <span class="hljs-number">9</span><br><span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>:<br>    j = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> j &lt;= i:<br>        print(j,<span class="hljs-string">"*"</span>,i,<span class="hljs-string">"="</span>,i*j,end=<span class="hljs-string">" "</span>)<br>        j += <span class="hljs-number">1</span><br>    print()<br>    i -= <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
@@ -204,8 +207,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">10</span>:<br>    count = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> count&lt;k:<br>        print(end=<span class="hljs-string">"        "</span>)<br>        count+=<span class="hljs-number">1</span><br>    k-=<span class="hljs-number">1</span><br>    j = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> j &lt;= i:<br>        print(<span class="hljs-string">"%s*%s=%s"</span>%(j,i,i*j),end=<span class="hljs-string">"\t"</span>)<br>        j += <span class="hljs-number">1</span><br>    print()<br>    i += <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 <p>向左倒三角</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">i = <span class="hljs-number">9</span><br><br><br><span class="hljs-keyword">while</span> i &gt;<span class="hljs-number">0</span>:<br>    k = <span class="hljs-number">9</span><br>    <span class="hljs-keyword">while</span> k &gt; i:<br>        print(end=<span class="hljs-string">"        "</span>)<br>        k -= <span class="hljs-number">1</span><br>    j = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> j &lt;= i:<br>        print(<span class="hljs-string">"%s*%s=%s"</span>%(j,i,i*j),end=<span class="hljs-string">"\t"</span>)<br>        j += <span class="hljs-number">1</span><br>    print()<br>    i -= <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-<p>##三、使用for循环</p>
-<p>常在遍历时候使用，</p>
+<h2 id="三、使用for循环"><a href="#三、使用for循环" class="headerlink" title="三、使用for循环"></a>三、使用for循环</h2><p>常在遍历时候使用，</p>
 <p>在字典中取出键值，但可以用var.values()获得键值,用var.items()得到它本身</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">var = <span class="hljs-string">"今年过年不收礼啊，"</span><br><span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> var:<br>    print(val)<br><span class="hljs-comment">#for循环嵌套</span><br><br>var = [<span class="hljs-string">"python"</span>,<span class="hljs-string">"hello"</span>,<span class="hljs-string">"java"</span>,<span class="hljs-string">"c"</span>]<br><span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> var:<br>    print(val)<br>    <span class="hljs-keyword">for</span> res <span class="hljs-keyword">in</span> val:<br>        print(res)<br><br>var = &#123;<span class="hljs-string">"a"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"b"</span>:<span class="hljs-number">2</span>,<span class="hljs-string">"c"</span>:<span class="hljs-number">3</span>&#125;<br><span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> var.items():<br>    print(val)<br></code></pre></td></tr></table></figure>
 <p>#在二级列表的使用中，可以使用abc这样的获得相应值，要求长度相同</p>
