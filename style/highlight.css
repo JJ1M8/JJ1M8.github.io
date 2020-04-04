@@ -1,71 +1,212 @@
-/*
-
-Style with support for rainbow parens
-
-*/
-.hljs {
-  display: block;
+.article-entry pre,
+.article-entry .highlight {
+  background: #2d2d2d;
+  margin: 10px 0;
+  padding: 10px 10px;
+  overflow: hidden;
   overflow-x: auto;
-  padding: 0.5em;
-  background: #474949;
-  color: #d1d9e1;
+  color: #dedede;
+  font-size: 0.9em;
+  line-height: 1.5;
+/** 滚动条整体部分 */
+/* 滚动条里面小方块 */
+/** 滚动条里面的轨道 */
 }
-.hljs-comment,
-.hljs-quote {
-  color: #969896;
-  font-style: italic;
+.article-entry pre::-webkit-scrollbar,
+.article-entry .highlight::-webkit-scrollbar {
+  height: 10px;
+  width: 7px;
+  background: rgba(0,0,0,0.1);
+/* 高宽分别对应横竖滚动条的尺寸 */
+/* width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 0; */
 }
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-type,
-.hljs-addition {
+.article-entry pre::-webkit-scrollbar:hover,
+.article-entry .highlight::-webkit-scrollbar:hover {
+  background: rgba(0,0,0,0.2);
+}
+.article-entry pre::-webkit-scrollbar-thumb,
+.article-entry .highlight::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.article-entry pre::-webkit-scrollbar-thumb:hover,
+.article-entry .highlight::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+/* Webkit browsers */
+  -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+/* Firefox */
+  -ms-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+/* IE9 */
+  -o-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+/* Opera(Old) */
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+/* IE9+, News */
+  background-color: rgba(0,0,0,0.4);
+}
+.article-entry pre::-webkit-scrollbar-track,
+.article-entry .highlight::-webkit-scrollbar-track {
+/* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+  background: #ededed;
+  border-radius: 10px;
+}
+.article-entry .highlight .gutter pre,
+.article-entry .highlight .gutter pre .line,
+.article-entry .gist .gist-file .gist-data .line-numbers {
+/* color: #666; */
+  color: #808080;
+}
+.article-entry pre,
+.article-entry code {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+.article-entry code {
+  background: #eee;
+  color: #c7254e;
+  padding: 0 0.3em;
+  border: none;
+}
+.article-entry pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0;
+  color: #dedede;
+}
+.article-entry .highlight {
+  border-radius: 4px;
+}
+.article-entry .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.article-entry .highlight table {
+  margin: 0;
+  width: auto;
+  border: none;
+}
+.article-entry .highlight td {
+  border: none;
+  padding: 0;
+}
+.article-entry .highlight figcaption {
+  color: #8e908c;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+.article-entry .highlight figcaption:before,
+.article-entry .highlight figcaption:after {
+  content: "";
+  display: table;
+}
+.article-entry .highlight figcaption:after {
+  clear: both;
+}
+.article-entry .highlight figcaption a {
+  float: right;
+}
+.article-entry .highlight .gutter pre {
+  text-align: right;
+  padding-right: 20px;
+}
+.article-entry .highlight .gutter pre .line {
+  text-shadow: none;
+}
+.article-entry .highlight .line {
+  color: #dedede;
+  min-height: 19px;
+}
+.article-entry .gist {
+  margin: 0 -20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  background: #272822;
+  padding: 15px 20px 15px 0;
+}
+.article-entry .gist .gist-file {
+  border: none;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  margin: 0;
+}
+.article-entry .gist .gist-file .gist-data {
+  background: none;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-data .line-numbers {
+  background: none;
+  border: none;
+  padding: 0 20px 0 0;
+}
+.article-entry .gist .gist-file .gist-data .line-data {
+  padding: 0 !important;
+}
+.article-entry .gist .gist-file .highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-meta {
+  background: #272822;
+  color: #8e908c;
+  font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 0 0;
+  padding: 0;
+  margin-top: 1em;
+  margin-left: 20px;
+}
+.article-entry .gist .gist-file .gist-meta a {
+  color: #258fb8;
+  font-weight: normal;
+}
+.article-entry .gist .gist-file .gist-meta a:hover {
+  text-decoration: underline;
+}
+pre .comment {
+/* color: #75715e; */
+  color: #9c9;
+}
+pre .keyword,
+pre .function .keyword,
+pre .class .params {
+  color: #66d9ef;
+}
+pre .tag,
+pre .doctype,
+pre .params,
+pre .function,
+pre .css .value {
+  color: #dedede;
+}
+pre .css~* .tag,
+pre .title,
+pre .at_rule,
+pre .at_rule .keyword,
+pre .preprocessor,
+pre .preprocessor .keyword {
+  color: #f92672;
+}
+pre .attribute,
+pre .built_in,
+pre .class,
+pre .css~* .class,
+pre .function .title {
+  color: #a6e22e;
+}
+pre .value,
+pre .string {
+  color: #dedede;
+}
+pre .number {
   color: #c9c;
 }
-.hljs-number,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #f99157;
-}
-.hljs-string,
-.hljs-doctag,
-.hljs-regexp {
-  color: #8abeb7;
-}
-.hljs-title,
-.hljs-name,
-.hljs-section,
-.hljs-built_in {
-  color: #b5bd68;
-}
-.hljs-variable,
-.hljs-template-variable,
-.hljs-selector-id,
-.hljs-class .hljs-title {
-  color: #fc6;
-}
-.hljs-section,
-.hljs-name,
-.hljs-strong {
-  font-weight: bold;
-}
-.hljs-symbol,
-.hljs-bullet,
-.hljs-subst,
-.hljs-meta,
-.hljs-link {
-  color: #f99157;
-}
-.hljs-deletion {
-  color: #dc322f;
-}
-.hljs-formula {
-  background: #eee8d5;
-}
-.hljs-attr,
-.hljs-attribute {
-  color: #81a2be;
-}
-.hljs-emphasis {
-  font-style: italic;
+pre .id,
+pre .css~* .id {
+  color: #fd971f;
 }
