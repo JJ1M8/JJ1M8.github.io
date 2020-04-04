@@ -1,17 +1,71 @@
-@font-face {
-  font-family: Chunkfive;
-  src: url("Chunkfive.otf");
+/*
+
+Style with support for rainbow parens
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #474949;
+  color: #d1d9e1;
 }
-body,
-.usertext {
-  color: #f0f0f0;
-  background: #600;
-  font-family: Chunkfive, sans;
-  --heading-1: 30px/32px Helvetica, sans-serif;
+.hljs-comment,
+.hljs-quote {
+  color: #969896;
+  font-style: italic;
 }
-@import url("print.css");
-@media print {
-  a[href^=http]::after {
-    content: attr(href);
-  }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-type,
+.hljs-addition {
+  color: #c9c;
+}
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #f99157;
+}
+.hljs-string,
+.hljs-doctag,
+.hljs-regexp {
+  color: #8abeb7;
+}
+.hljs-title,
+.hljs-name,
+.hljs-section,
+.hljs-built_in {
+  color: #b5bd68;
+}
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-class .hljs-title {
+  color: #fc6;
+}
+.hljs-section,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-link {
+  color: #f99157;
+}
+.hljs-deletion {
+  color: #dc322f;
+}
+.hljs-formula {
+  background: #eee8d5;
+}
+.hljs-attr,
+.hljs-attribute {
+  color: #81a2be;
+}
+.hljs-emphasis {
+  font-style: italic;
 }
