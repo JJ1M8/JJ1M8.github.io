@@ -16,7 +16,7 @@
     <meta name="description" content="我是僵尸，我要当一个厉害的人" />
     
     <title>
-      2020-4-4 悼念我们的英雄 - JJ1M8
+      day18：使用tkinter进行图形化编程入门 - JJ1M8
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -29,7 +29,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2020年初，我们都经历了太多太多"><span class="toc-text">2020年初，我们都经历了太多太多</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、建立一个窗口"><span class="toc-text">一、建立一个窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、通过按钮获取输入内容"><span class="toc-text">二、通过按钮获取输入内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、显示文本："><span class="toc-text">三、显示文本：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、在显示文本的基础上加入滚动条吧"><span class="toc-text">四、在显示文本的基础上加入滚动条吧</span></a></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -155,11 +155,11 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">2020-4-4 悼念我们的英雄</div>
+      <div class="title">day18：使用tkinter进行图形化编程入门</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
-          <span>2020/04/04</span>
+          <span>2020/04/19</span>
         </span>
 
         
@@ -170,7 +170,7 @@
           <span>
               
                 
-                  <a href="/categories/编码之外">编码之外</a>
+                  <a href="/categories/python">python</a>
                 
               
           </span>
@@ -183,11 +183,7 @@
             <span>
                 
                   
-                    <a href="/tags/编码之外">编码之外</a>
-                  
-                
-                  
-                    <a href="/tags/日记">日记</a>
+                    <a href="/tags/python">python</a>
                   
                 
             </span>
@@ -197,9 +193,17 @@
       <div>
       </div>
     </div>
-    <h1 id="2020年初，我们都经历了太多太多">2020年初，我们都经历了太多太多<a class="post-anchor" href="#2020年初，我们都经历了太多太多"></a></h1><p>我们看见病毒在人间肆虐，看见多少人失去亲人、朋友。我们更看见各个行业都有人在做着自己力所能及的事情，医生们更是冒着生命危险在救治病人，他们都是我们的英雄。<br>今天是清明节，举国默哀，悼念我们的英雄。</p>
-<a id="more"></a>
-<p><a href="/2020/04/04/2020-4-4-%E6%82%BC%E5%BF%B5%E6%88%91%E4%BB%AC%E7%9A%84%E8%8B%B1%E9%9B%84/1.png" data-caption="设置页面" data-fancybox="images"><img src="/2020/04/04/2020-4-4-%E6%82%BC%E5%BF%B5%E6%88%91%E4%BB%AC%E7%9A%84%E8%8B%B1%E9%9B%84/1.png" alt="设置页面"></a></p>
+    <h2 id="一、建立一个窗口"><a href="#一、建立一个窗口" class="headerlink" title="一、建立一个窗口"></a>一、建立一个窗口</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter<br><br><span class="hljs-comment">#创建一个主窗口</span><br>win = tkinter.Tk()<br><br><span class="hljs-comment">#设置标题</span><br>win.title(<span class="hljs-string">"JJsPython"</span>)<br><br><span class="hljs-comment">#设置窗口大小,x not *</span><br>win.geometry(<span class="hljs-string">"500x500+250+150"</span>)<br><br><span class="hljs-comment">#input get</span><br>e1 = tkinter.Variable()<br><span class="hljs-comment">#input win，use show to notshow</span><br>entry = tkinter.Entry(win,textvariable = e1)<br>entry.pack()<br><span class="hljs-comment">#init e1</span><br>e1.set(<span class="hljs-string">"请输入密码"</span>)`在这里插入代码片`<br><br><span class="hljs-comment">#启动主窗口</span><br>win.mainloop()<br></code></pre></td></tr></table></figure>
+<p><strong>注意在geometry设置中，是500x500，不是“*”号</strong></p>
+<p>如果是要输入密码的话，要设置隐藏：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#input win，use show to notshow</span><br>entry = tkinter.Entry(win,textvariable = e1,show = <span class="hljs-string">"*"</span>)<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/20200419164957623.png" alt="在这里插入图片描述"></p>
+<h2 id="二、通过按钮获取输入内容"><a href="#二、通过按钮获取输入内容" class="headerlink" title="二、通过按钮获取输入内容"></a>二、通过按钮获取输入内容</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter<br><br>win = tkinter.Tk()<br><br>win.title(<span class="hljs-string">"JJsPython"</span>)<br><br>win.geometry(<span class="hljs-string">"300x300+250+150"</span>)<br><br>e = tkinter.Variable()<br>entry = tkinter.Entry(win,textvariable = e)<br>entry.pack()<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span><span class="hljs-params">()</span>:</span><br>    print(e.get())<br><br>button = tkinter.Button(win,text = <span class="hljs-string">"commit"</span>, command = func)<br>button.pack()<br><br>win.mainloop()<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/20200419165022392.png" alt="在这里插入图片描述"></p>
+<h2 id="三、显示文本："><a href="#三、显示文本：" class="headerlink" title="三、显示文本："></a>三、显示文本：</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter<br><br>win = tkinter.Tk()<br><br>win.title(<span class="hljs-string">"JJsPython"</span>)<br><br>win.geometry(<span class="hljs-string">"300x300+250+150"</span>)<br><br>text = tkinter.Text(win,width = <span class="hljs-number">100</span>, height = <span class="hljs-number">30</span>)<br>text.pack()<br><br>str = <span class="hljs-string">"""</span><br><span class="hljs-string">Mother is the most important person to us. Now people celebrate Mother’s Day every year. It has become more and more popular. This day is on the second Sunday in May. On that day, children often send their mother flowers to express their love. And some children make small gifts for their mothers.</span><br><span class="hljs-string">In last year's Mother's Day, I didn't spend it with my mother because she was in the hometown and I was at school, which made me feel ashamed. At night, I called my mother. At that time, I left my tears, and my mother told me that I should study hard at school. In the end, I said to her “Happy Mother’ Day, I love you" and she was very surprised and happy. </span><br><span class="hljs-string"></span><br><span class="hljs-string">"""</span><br><br>text.insert(tkinter.INSERT,str)<br><br>win.mainloop()<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/20200419165119988.png" alt="在这里插入图片描述"></p>
+<h2 id="四、在显示文本的基础上加入滚动条吧"><a href="#四、在显示文本的基础上加入滚动条吧" class="headerlink" title="四、在显示文本的基础上加入滚动条吧"></a>四、在显示文本的基础上加入滚动条吧</h2><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter<br><br>win = tkinter.Tk()<br>win.title(<span class="hljs-string">"JJsPython"</span>)<br>win.geometry(<span class="hljs-string">"300x300+250+150"</span>)<br><br><span class="hljs-comment">#create a scroll</span><br>scroll = tkinter.Scrollbar()<br>text = tkinter.Text(win,width=<span class="hljs-number">100</span>,height=<span class="hljs-number">40</span>)<br><br><span class="hljs-comment">#show scrollbar position</span><br>scroll.pack(side = tkinter.RIGHT,fill = tkinter.Y)<br><span class="hljs-comment">#text show</span><br>text.pack(side = tkinter.LEFT,fill = tkinter.Y)<br><br><span class="hljs-comment">#tide scrollbar and text</span><br>scroll.config(command = text.yview)<br><span class="hljs-comment">#tide text and scrollbar</span><br>text.config(yscrollcommand = scroll.set)<br><br>str = <span class="hljs-string">"""</span><br><span class="hljs-string">Mother is the most important person to us. Now people celebrate Mother’s Day every year. It has become more and more popular. This day is on the second Sunday in May. On that day, children often send their mother flowers to express their love. And some children make small gifts for their mothers.</span><br><span class="hljs-string">In last year's Mother's Day, I didn't spend it with my mother because she was in the hometown and I was at school, which made me feel ashamed. At night, I called my mother. At that time, I left my tears, and my mother told me that I should study hard at school. In the end, I said to her “Happy Mother’ Day, I love you" and she was very surprised and happy. </span><br><span class="hljs-string">Mother is the most important person to us. Now people celebrate Mother’s Day every year. It has become more and more popular. This day is on the second Sunday in May. On that day, children often send their mother flowers to express their love. And some children make small gifts for their mothers.</span><br><span class="hljs-string">In last year's Mother's Day, I didn't spend it with my mother because she was in the hometown and I was at school, which made me feel ashamed. At night, I called my mother. At that time, I left my tears, and my mother told me that I should study hard at school. In the end, I said to her “Happy Mother’ Day, I love you" and she was very surprised and happy. </span><br><span class="hljs-string">"""</span><br><br>text.insert(tkinter.INSERT,str)<br><br><br>win.mainloop()<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/20200419165219704.png" alt="在这里插入图片描述"></p>
 
 
   
@@ -226,12 +230,10 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">day18：使用tkinter进行图形化编程入门</a>
-        
     </div>
     <div class="item right">
         
-          <a href="/2020/04/03/%E7%AD%96%E7%88%B7%E6%8B%BF%E5%88%B0%E6%97%A5%E6%9C%ACoffer/">策爷拿到日本offer</a>
+          <a href="/2020/04/04/2020-4-4-%E6%82%BC%E5%BF%B5%E6%88%91%E4%BB%AC%E7%9A%84%E8%8B%B1%E9%9B%84/">2020-4-4 悼念我们的英雄</a>
         
     </div>
   </div>
@@ -243,7 +245,7 @@
       本文作者：<a href="http://jj1m8.github.io">LSJ</a>
     </div>
     <div class="link">
-      永久链接：<a href="http://jj1m8.github.io/2020/04/04/2020-4-4-%E6%82%BC%E5%BF%B5%E6%88%91%E4%BB%AC%E7%9A%84%E8%8B%B1%E9%9B%84/">http://jj1m8.github.io/2020/04/04/2020-4-4-%E6%82%BC%E5%BF%B5%E6%88%91%E4%BB%AC%E7%9A%84%E8%8B%B1%E9%9B%84/</a>
+      永久链接：<a href="http://jj1m8.github.io/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">http://jj1m8.github.io/2020/04/19/day18%EF%BC%9A%E4%BD%BF%E7%94%A8tkinter%E8%BF%9B%E8%A1%8C%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="http://jj1m8.github.io">LSJ</a>的博客，转载请注明出处！
